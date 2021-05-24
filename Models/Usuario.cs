@@ -13,5 +13,7 @@ namespace SGOALB_BACK.Models
         public string nombre { get; set; }
 
         public List<UsuarioxRol> UsuarioxRol { get; set; }
+        public List<OrdenCompra> OrdenCompra { get; set; }
+        public List<OrdenSalida> OrdenSalida { get; set; }
     }
 }

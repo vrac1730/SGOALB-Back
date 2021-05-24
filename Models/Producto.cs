@@ -34,5 +34,6 @@ namespace SGOALB_BACK.Models
         public virtual Local Local { get; set; }
         public List<DetalleCompra> DetalleCompra { get; set; }
         public List<DetalleSalida> DetalleSalida { get; set; }
+        public List<DetalleFactura> DetalleFactura { get; set; }
     }
 }
