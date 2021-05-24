@@ -32,5 +32,7 @@ namespace SGOALB_BACK.Models
         public int idLocal { get; set; }
         [ForeignKey("idLocal")]
         public virtual Local Local { get; set; }
+        public List<DetalleCompra> DetalleCompra { get; set; }
+        public List<DetalleSalida> DetalleSalida { get; set; }
     }
 }
