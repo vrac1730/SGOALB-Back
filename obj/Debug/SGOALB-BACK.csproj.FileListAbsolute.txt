@@ -189,7 +189,6 @@ C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\bin\es\System.Web.Razor.resources
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\bin\es\System.Web.WebPages.resources.dll
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CrearProducto.resources
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionProducto.resources
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CreoCategoria.resources
@@ -198,3 +197,4 @@ C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.Core
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
+C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.mOrdenCompraSalida.resources

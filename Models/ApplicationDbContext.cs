@@ -18,6 +18,8 @@ namespace SGOALB_BACK.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UsuarioxRol>().HasKey(x => new { x.idUsuario, x.idRol });
+            modelBuilder.Entity<DetalleCompra>().HasKey(x => new { x.idProducto, x.idOrdenCompra });
+            modelBuilder.Entity<DetalleSalida>().HasKey(x => new { x.idOrdenSalida, x.idProducto });
             base.OnModelCreating(modelBuilder);
         }
     }

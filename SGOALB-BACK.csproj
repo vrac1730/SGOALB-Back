@@ -153,13 +153,20 @@
     <Compile Include="Migrations\202105210109278_CreoCategoria.Designer.cs">
       <DependentUpon>202105210109278_CreoCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105242206524_mOrdenCompraSalida.cs" />
+    <Compile Include="Migrations\202105242206524_mOrdenCompraSalida.Designer.cs">
+      <DependentUpon>202105242206524_mOrdenCompraSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\DetalleCompra.cs" />
+    <Compile Include="Models\DetalleSalida.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Local.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
+    <Compile Include="Models\OrdenSalida.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Rol.cs" />
@@ -229,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105210109278_CreoCategoria.resx">
       <DependentUpon>202105210109278_CreoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105242206524_mOrdenCompraSalida.resx">
+      <DependentUpon>202105242206524_mOrdenCompraSalida.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

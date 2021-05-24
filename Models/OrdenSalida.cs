@@ -15,7 +15,7 @@ namespace SGOALB_BACK.Models
         public string codigo { get; set; }
         public string estado { get; set; }
         public int id_Usuario { get; set; }
-        [ForeignKey("id_Usuaio")]
+        [ForeignKey("id_Usuario")]
         public virtual Usuario Usuario { get; set; }
         public List<DetalleSalida> DetalleSalida { get; set; }
     }
