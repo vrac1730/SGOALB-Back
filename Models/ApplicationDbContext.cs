@@ -17,6 +17,7 @@ namespace SGOALB_BACK.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UsuarioxRol>().HasKey(x => new { x.idUsuario, x.idRol });
             base.OnModelCreating(modelBuilder);
         }
     }

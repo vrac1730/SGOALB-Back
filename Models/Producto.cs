@@ -17,9 +17,20 @@ namespace SGOALB_BACK.Models
         public string codigo { get; set; }
         public double costo { get; set; }
         public int cantidad { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime fecha_ingreso { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime fecha_salida { get; set; }
+        public int stock_min { get; set; }
 
         public int idCategoria { get; set; }
         [ForeignKey("idCategoria")]
         public virtual Categoria Categoria { get; set; }
+        public int idEstado { get; set; }
+        [ForeignKey("idEstado")]
+        public virtual Estado Estado { get; set; }
+        public int idLocal { get; set; }
+        [ForeignKey("idLocal")]
+        public virtual Local Local { get; set; }
     }
 }
