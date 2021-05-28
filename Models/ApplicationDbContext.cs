@@ -10,6 +10,8 @@ namespace SGOALB_BACK.Models
     {
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<DetalleCompra> DetalleCompras { get; set; }
+        public DbSet<OrdenCompra> OrdenCompras { get; set; }
         public ApplicationDbContext() : base("DefaultConnection")
         {
             
