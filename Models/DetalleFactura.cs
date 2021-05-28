@@ -6,6 +6,7 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("DetalleFactura")]
     public class DetalleFactura
     {
         public int idProducto { get; set; }

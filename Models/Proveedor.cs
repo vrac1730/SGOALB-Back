@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("Proveedor")]
     public class Proveedor
     {
         [Key]
@@ -16,5 +18,6 @@ namespace SGOALB_BACK.Models
         public long telefono { get; set; }
         public long ruc { get; set; }
         public string razon_social { get; set; }
+        public List<Cotizacion> Cotizacion { get; set; }
     }
 }

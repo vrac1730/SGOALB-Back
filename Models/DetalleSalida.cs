@@ -7,6 +7,7 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("DetalleSalida")]
     public class DetalleSalida
     {
 

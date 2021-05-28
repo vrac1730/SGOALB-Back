@@ -161,9 +161,19 @@
     <Compile Include="Migrations\202105242231333_Factura.Designer.cs">
       <DependentUpon>202105242231333_Factura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105280044443_CotizacionyAlmacen.cs" />
+    <Compile Include="Migrations\202105280044443_CotizacionyAlmacen.Designer.cs">
+      <DependentUpon>202105280044443_CotizacionyAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105280053003_TablasModelos.cs" />
+    <Compile Include="Migrations\202105280053003_TablasModelos.Designer.cs">
+      <DependentUpon>202105280053003_TablasModelos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Cotizacion.cs" />
     <Compile Include="Models\DetalleCompra.cs" />
     <Compile Include="Models\DetalleFactura.cs" />
     <Compile Include="Models\DetalleSalida.cs" />
@@ -247,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105242231333_Factura.resx">
       <DependentUpon>202105242231333_Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105280044443_CotizacionyAlmacen.resx">
+      <DependentUpon>202105280044443_CotizacionyAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105280053003_TablasModelos.resx">
+      <DependentUpon>202105280053003_TablasModelos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
