@@ -11,12 +11,15 @@ namespace SGOALB_BACK.Models
     {
         [Key]
         public int id { get; set; }
+        [Column(TypeName = "datetime2")]
         public DateTime fecha { get; set; }
         public string codigo { get; set; }
         public string estado { get; set; }
+
         public int id_Usuario { get; set; }
         [ForeignKey("id_Usuario")]
         public virtual Usuario Usuario { get; set; }
+
         public List<DetalleSalida> DetalleSalida { get; set; }
     }
 }

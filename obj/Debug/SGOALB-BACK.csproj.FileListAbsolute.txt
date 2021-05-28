@@ -202,3 +202,4 @@ C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB-BACK.csprojAssem
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Factura.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.mOrdenCompraSalida.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Factura.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ModelosActualizados.resources

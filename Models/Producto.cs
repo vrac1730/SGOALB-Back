@@ -15,13 +15,15 @@ namespace SGOALB_BACK.Models
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public string codigo { get; set; }
-        public double costo { get; set; }
+        //public double costo { get; set; }
+        public string marca { get; set; }
         public int cantidad { get; set; }
-        [Column(TypeName = "datetime2")]
-        public DateTime fecha_ingreso { get; set; }
-        [Column(TypeName = "datetime2")]
-        public DateTime fecha_salida { get; set; }
+        //[Column(TypeName = "datetime2")]
+        //public DateTime fecha_ingreso { get; set; }
+        //[Column(TypeName = "datetime2")]
+        //public DateTime fecha_salida { get; set; }
         public int stock_min { get; set; }
+        public int stock_max { get; set; }
 
         public int idCategoria { get; set; }
         [ForeignKey("idCategoria")]
@@ -32,14 +34,13 @@ namespace SGOALB_BACK.Models
         public int idLocal { get; set; }
         [ForeignKey("idLocal")]
         public Local Local { get; set; }
-
         public int idAlmacen { get; set; }
         [ForeignKey("idAlmacen")]
         public Almacen Almacen{ get; set; }
 
         public List<DetalleCompra> DetalleCompra { get; set; }
         public List<DetalleSalida> DetalleSalida { get; set; }
-        public List<DetalleFactura> DetalleFactura { get; set; }
+        //public List<DetalleFactura> DetalleFactura { get; set; }
         public List<Cotizacion> Cotizacion { get; set; }
     }
 }
