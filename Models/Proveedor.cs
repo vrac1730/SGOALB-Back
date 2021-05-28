@@ -16,5 +16,7 @@ namespace SGOALB_BACK.Models
         public long telefono { get; set; }
         public long ruc { get; set; }
         public string razon_social { get; set; }
+
+        public List<Cotizacion> Cotizacion { get; set; }
     }
 }

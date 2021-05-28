@@ -25,15 +25,21 @@ namespace SGOALB_BACK.Models
 
         public int idCategoria { get; set; }
         [ForeignKey("idCategoria")]
-        public virtual Categoria Categoria { get; set; }
+        public Categoria Categoria { get; set; }
         public int idEstado { get; set; }
         [ForeignKey("idEstado")]
-        public virtual Estado Estado { get; set; }
+        public Estado Estado { get; set; }
         public int idLocal { get; set; }
         [ForeignKey("idLocal")]
-        public virtual Local Local { get; set; }
+        public Local Local { get; set; }
+
+        public int idAlmacen { get; set; }
+        [ForeignKey("idAlmacen")]
+        public Almacen Almacen{ get; set; }
+
         public List<DetalleCompra> DetalleCompra { get; set; }
         public List<DetalleSalida> DetalleSalida { get; set; }
         public List<DetalleFactura> DetalleFactura { get; set; }
+        public List<Cotizacion> Cotizacion { get; set; }
     }
 }

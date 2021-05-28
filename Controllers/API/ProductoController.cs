@@ -23,16 +23,28 @@ namespace SGOALB_BACK.Controllers.API
 
         // GET /api/productos
         [Route("api/productos")]
-        public IEnumerable<Producto> GetProductos()
+        public List<Producto> GetProductos()
         {
-            return _context.Productos.ToList();
+            return _context.Productos.Include(m=>m.Almacen).ToList();
         }
 
         // GET /api/productos/1
-        [Route("api/productos/{id}")]
-        public Producto GetProducto(int id)
+        [Route("api/productos/cod{cod}")]
+        public Producto GetProductoByCodigo(string cod)
         {
-            var data = _context.Productos.SingleOrDefault(m => m.id == id);
+            var data = _context.Productos.Include(m => m.Almacen).FirstOrDefault(m => m.codigo == cod);
+
+            if (data == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            return data;
+        }
+
+        // GET /api/productos/1
+        [Route("api/productos/{nom}")]
+        public List<Producto> GetProductoByNombre(string nom)
+        {
+            var data = _context.Productos.Include(m => m.Almacen).Where(m => m.nombre.Contains(nom)).ToList();
 
             if (data == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);

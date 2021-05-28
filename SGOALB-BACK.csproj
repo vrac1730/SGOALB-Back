@@ -162,8 +162,10 @@
       <DependentUpon>202105242231333_Factura.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Cotizacion.cs" />
     <Compile Include="Models\DetalleCompra.cs" />
     <Compile Include="Models\DetalleFactura.cs" />
     <Compile Include="Models\DetalleSalida.cs" />
