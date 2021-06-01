@@ -16,15 +16,16 @@ namespace SGOALB_BACK.Controllers.API
         {
             _context = new ApplicationDbContext();
         }
+
         // GET /api/ordencompras
         [Route("api/ordencompras")]
-        public IEnumerable<OrdenCompra> GetOrdenCompras()
+        public List<OrdenCompra> GetOrdenCompras()
         {
             return _context.OrdenCompras.ToList();
         }
 
         // GET /api/ordencompras/1
-        [Route("api/ordencompras/{id}")]
+        [Route("api/ordencompra/{id}")]
         public OrdenCompra GetOrdenCompras(int id)
         {
             var data = _context.OrdenCompras.SingleOrDefault(m => m.id == id);
@@ -42,11 +43,18 @@ namespace SGOALB_BACK.Controllers.API
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            _context.OrdenCompras.Add(data);
-            //calcular monto total 
+            data.fecha_orden = DateTime.Today;
+            data.codigo = "A00" + data.id;
 
+            _context.OrdenCompras.Add(data);           
+
+            var detalles = _context.DetalleCompras.Where(m => m.idOrdenCompra == data.id);
+
+            if (detalles == null)
+                throw new Exception("La orden de compra con código"+data.codigo+" no presenta productos asociados.");
+            
+            double monto = detalles.Sum(m => m.total);
             _context.SaveChanges();
-
 
             return data;
         }
@@ -59,16 +67,12 @@ namespace SGOALB_BACK.Controllers.API
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var OrdenCompraInDb = _context.OrdenCompras.Include("DetalleCompra").SingleOrDefault(m => m.id == id);
-            //var detalleInDb = _context.DetalleCompras.SingleOrDefault(m => m.idOrdenCompra == OrdenCompraInDb.id & m.idProducto == OrdenCompraInDb.);
-            
+            var OrdenCompraInDb = _context.OrdenCompras.Include("DetalleCompra").SingleOrDefault(m => m.id == id);         
 
             if (OrdenCompraInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            //detalleInDb.cantidad = data.DetalleCompras.;
-            OrdenCompraInDb.fecha_orden = data.fecha_orden;
-
+            OrdenCompraInDb.fecha_pago = data.fecha_pago;
 
             _context.SaveChanges();
 

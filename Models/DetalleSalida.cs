@@ -19,6 +19,7 @@ namespace SGOALB_BACK.Models
         [ForeignKey("idProducto")]
         public virtual Producto Producto { get; set; }
 
+        public string estado { get; set; }
         public int cantidad { get; set; }
         public string observacion { get; set; }
     }

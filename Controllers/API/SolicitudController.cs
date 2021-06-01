@@ -15,11 +15,42 @@ namespace SGOALB_BACK.Controllers.API
         {
             _context = new ApplicationDbContext();
         }
+
+        // GET /api/productos
+        [Route("api/ordensalida")]
+        public List<OrdenSalida> GetOrdenSalidas()
+        {
+            return _context.OrdenSalidas.ToList();
+        }
+
+        // GET /api/productos/1
+        [Route("api/ordensalida/{id}")]
+        public OrdenSalida GetOrdensalida(int id)
+        {
+            var data = _context.OrdenSalidas.FirstOrDefault(c => c.id == id);
+
+            if (data == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            return data;
+        }
+
+        [Route("api/ordensalida/codigo/{codigo}")]
+        public OrdenSalida GetOrdensalidaxcodigo(String codigo)
+        {
+            var data = _context.OrdenSalidas.FirstOrDefault(c => c.codigo == codigo);
+
+            if (data == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            return data;
+        }
+
         // GET /api/productos/1
         [Route("api/ordensalida/fecha/{fecha}")]
         public List<OrdenSalida> GetOrdenSalidaxfecha(DateTime fecha)
         {
-            var data = _context.OrdenSalida.Where(f => f.fecha == fecha).ToList();
+            var data = _context.OrdenSalidas.Where(f => f.fecha == fecha).ToList();
 
             if (data == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -30,52 +61,18 @@ namespace SGOALB_BACK.Controllers.API
         [Route("api/ordensalida/estado/{estado}")]
         public List<OrdenSalida> GetOrdenSalidaxestado(String estado)
         {
-            var data = _context.OrdenSalida.Where(e => e.estado.Contains(estado)).ToList();
+            var data = _context.OrdenSalidas.Where(e => e.estado.Contains(estado)).ToList();
 
             if (data == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
             return data;
         }
-
-
-        [Route("api/ordensalida/codigo/{codigo}")]
-        public List<OrdenSalida> GetOrdensalidaxcodigo(String codigo)
-        {
-            var data = _context.OrdenSalida.Where(c => c.codigo == codigo).ToList();
-
-            if (data == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-
-            return data;
-        }
-        //no hay id_ de local en  orden de salida
-        /*
+        
         [Route("api/ordensalida/local/{id_local}")]
         public List<OrdenSalida> GetOrdenSalidaxlocal(int id_local)
         {
-            var data = _context.OrdenSalida.Where(i => i.id_local == id_local).ToList();
-            var producto = _context.Productos.Where(i => i.idLocal == id_local).ToList();
-
-            if (data == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-
-            return data;
-        }*/
-
-        // no hay local
-        // GET /api/productos
-        [Route("api/ordensalida")]
-        public IEnumerable<OrdenSalida> GetOrdenSalidas()
-        {
-            return _context.OrdenSalida.ToList();
-        }
-
-        // GET /api/productos/1
-        [Route("api/ordensalida/id/{id}")]
-        public OrdenSalida Getordensalida(int id)
-        {
-            var data = _context.OrdenSalida.SingleOrDefault(m => m.id == id);
+            var data = _context.OrdenSalidas.Where(i => i.Usuario.idLocal == id_local).ToList();
 
             if (data == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);

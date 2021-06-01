@@ -12,6 +12,7 @@ namespace SGOALB_BACK.Models
         [Key]
         public int id { get; set; }
         [Column(TypeName = "datetime2")]
+        public string codigo { get; set; }
         public DateTime fecha_orden { get; set; }
         public DateTime fecha_pago { get; set; }
         public double monto_total { get; set; }

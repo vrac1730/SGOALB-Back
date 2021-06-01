@@ -17,7 +17,7 @@ namespace SGOALB_BACK.Models
         public string codigo { get; set; }
         //public double costo { get; set; }
         public string marca { get; set; }
-        public int cantidad { get; set; }
+        //public int cantidad { get; set; }
         //[Column(TypeName = "datetime2")]
         //public DateTime fecha_ingreso { get; set; }
         //[Column(TypeName = "datetime2")]
@@ -31,9 +31,9 @@ namespace SGOALB_BACK.Models
         public int idEstado { get; set; }
         [ForeignKey("idEstado")]
         public Estado Estado { get; set; }
-        public int idLocal { get; set; }
+        /*public int idLocal { get; set; }
         [ForeignKey("idLocal")]
-        public Local Local { get; set; }
+        public Local Local { get; set; }*/
         public int idAlmacen { get; set; }
         [ForeignKey("idAlmacen")]
         public Almacen Almacen{ get; set; }

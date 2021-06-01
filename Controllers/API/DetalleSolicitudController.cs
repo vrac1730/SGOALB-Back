@@ -14,25 +14,23 @@ namespace SGOALB_BACK.Controllers.API
         public DetalleSolicitudController()
         {
             _context = new ApplicationDbContext();
-
         }
+
         // PUT /api/detallesolicitud/1
         [Route("api/detallesolicitud/{id}")]
         [HttpPut]
-        public void UpdateDetalleSalida(int id, DetalleSalida data)
+        public void UpdateDetalleSolicitud(int id, DetalleSalida data)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var productInDb = _context.OrdenSalida.Include("DetalleSalida").SingleOrDefault(m => m.id == id);
-            var producto = _context.DetalleSalida.SingleOrDefault(d => d.idOrdenSalida == productInDb.id);
+            var detalle = _context.DetalleSalidas.SingleOrDefault(d => d.idProducto == data.idProducto);
 
-            if (productInDb == null)
+            if (detalle == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            producto.cantidad = data.cantidad;
-            producto.observacion = data.observacion;
-
+            detalle.cantidad = data.cantidad;
+            detalle.observacion = data.observacion;
 
             _context.SaveChanges();
         }

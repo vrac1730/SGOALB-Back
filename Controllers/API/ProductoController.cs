@@ -52,7 +52,20 @@ namespace SGOALB_BACK.Controllers.API
             return data;
         }
 
-        // POST /api/productos
+        // GET /api/productos/1
+        [Route("api/productos/pro/{id}")]
+        public List<Producto> GetProductoByProveedor(int id)
+        {
+            var cotizacion = _context.Cotizaciones.Where(m => m.idProveedor == id).Select(m=> m.Producto).ToList();
+            //comprobar que se muestren las propiedades navigacionales
+
+            if (cotizacion == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            return cotizacion;
+        }
+
+        /*// POST /api/productos
         [Route("api/productos")]
         [HttpPost]
         public Producto CreateProducto(Producto data)
@@ -65,7 +78,7 @@ namespace SGOALB_BACK.Controllers.API
 
             return data;
         }
-
+        
         // PUT /api/productos/1
         [Route("api/productos/{id}")]
         [HttpPut]
@@ -81,11 +94,10 @@ namespace SGOALB_BACK.Controllers.API
 
             productInDb.nombre = data.nombre;
             productInDb.descripcion = data.descripcion;
-            productInDb.Categoria.id = data.idCategoria;
 
             _context.SaveChanges();
         }
-
+        
         // DELETE /api/productos/1
         [Route("api/productos/{id}")]
         [HttpDelete]
@@ -98,6 +110,6 @@ namespace SGOALB_BACK.Controllers.API
 
             _context.Productos.Remove(productInDb);
             _context.SaveChanges();
-        }
+        }*/
     }
 }
