@@ -10,9 +10,9 @@ namespace SGOALB_BACK.Models
     public class OrdenCompra
     {
         [Key]
-        public int id { get; set; }
-        [Column(TypeName = "datetime2")]
+        public int id { get; set; }        
         public string codigo { get; set; }
+        [Column(TypeName = "datetime2")]
         public DateTime fecha_orden { get; set; }
         public DateTime fecha_pago { get; set; }
         public double monto_total { get; set; }
