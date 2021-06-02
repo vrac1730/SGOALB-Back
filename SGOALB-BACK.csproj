@@ -169,6 +169,10 @@
     <Compile Include="Migrations\202105280233527_ModelosActualizados.Designer.cs">
       <DependentUpon>202105280233527_ModelosActualizados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106020206056_CorrecionCodigo.cs" />
+    <Compile Include="Migrations\202106020206056_CorrecionCodigo.Designer.cs">
+      <DependentUpon>202106020206056_CorrecionCodigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -260,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105280233527_ModelosActualizados.resx">
       <DependentUpon>202105280233527_ModelosActualizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106020206056_CorrecionCodigo.resx">
+      <DependentUpon>202106020206056_CorrecionCodigo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

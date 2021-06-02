@@ -306,3 +306,4 @@ C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-B
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionCodigo.resources
