@@ -17,36 +17,27 @@ namespace SGOALB_BACK.Controllers
         // GET: Productoes
         public ActionResult Index(string cadena, string cod)
         {
-
-            //if (cadena != null & cod != null)
-            //{
-            //    var producto1 = db.Productos
-            //        .Include(p => p.Almacen).Where(p => p.nombre.Contains(cadena)).Where(p => p.codigo == cod)
-            //        .Include(p => p.Categoria).Include(p => p.Estado);
-            //    return View(producto1.ToList());
-            //}
-
-            if (cod != null)
+            if (cod == null && cadena == null)
             {
-                var producto2 = db.Productos
-                    .Include(p => p.Almacen).Where(p => p.codigo ==cod)
-                    .Include(p => p.Categoria).Include(p => p.Estado);
-                return View(producto2.ToList());
+                var result = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).ToList();
+                return View(result);
             }
 
-            //Cuando cadena no es nulo no se efectua la consulta
-            else if (cadena != null)
+            else if (cod.Length > 0) 
             {
-                var producto3 = db.Productos
-                    .Include(p => p.Almacen).Where(p => p.nombre.Contains(cadena))
-                    .Include(p => p.Categoria).Include(p => p.Estado);
-                return View(producto3.ToList());
+                var r1 = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).Where(p=>p.codigo==cod).ToList();
+                return View(r1);
             }
 
-            //Cuando ambos son nulos no se efectua la consulta
-            var producto4 = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado);
-            return View(producto4.ToList());
+            else if (cadena.Length > 0)
+            {
+                var r2 = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).Where(p=>p.nombre.Contains(cadena)).ToList();
+                return View(r2);
+            }           
 
+            var resultado = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).ToList();
+
+            return View(resultado);
         }
 
         // GET: Productoes/Details/5
