@@ -29,5 +29,9 @@ namespace SGOALB_BACK.Models
             modelBuilder.Entity<Cotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<SGOALB_BACK.Models.Almacen> Almacens { get; set; }
+
+        public System.Data.Entity.DbSet<SGOALB_BACK.Models.Estado> Estadoes { get; set; }
     }
 }

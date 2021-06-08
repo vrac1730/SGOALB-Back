@@ -136,12 +136,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AlmacenController.cs" />
     <Compile Include="Controllers\API\DetalleCompraController.cs" />
     <Compile Include="Controllers\API\DetalleSolicitudController.cs" />
     <Compile Include="Controllers\API\OrdenCompraController.cs" />
     <Compile Include="Controllers\API\ProductoController.cs" />
     <Compile Include="Controllers\API\SolicitudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -229,6 +231,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ReporteStock\Reporte_Stock.cshtml" />
+    <Content Include="Views\ReporteStock\Details.cshtml" />
+    <Content Include="Views\Productoes\Create.cshtml" />
+    <Content Include="Views\Productoes\Delete.cshtml" />
+    <Content Include="Views\Productoes\Details.cshtml" />
+    <Content Include="Views\Productoes\Edit.cshtml" />
+    <Content Include="Views\Productoes\Index.cshtml" />
+    <Content Include="Views\Almacen\Create.cshtml" />
+    <Content Include="Views\Almacen\Delete.cshtml" />
+    <Content Include="Views\Almacen\Details.cshtml" />
+    <Content Include="Views\Almacen\Edit.cshtml" />
+    <Content Include="Views\Almacen\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

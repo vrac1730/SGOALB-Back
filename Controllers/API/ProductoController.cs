@@ -25,6 +25,7 @@ namespace SGOALB_BACK.Controllers.API
         [Route("api/productos")]
         public List<Producto> GetProductos()
         {
+
             return _context.Productos.Include(m=>m.Almacen).ToList();
         }
 
@@ -64,6 +65,8 @@ namespace SGOALB_BACK.Controllers.API
 
             return cotizacion;
         }
+
+
 
         /*// POST /api/productos
         [Route("api/productos")]
