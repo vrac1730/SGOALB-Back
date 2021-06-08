@@ -411,4 +411,3 @@ C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.csp
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorreccionOrden.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache

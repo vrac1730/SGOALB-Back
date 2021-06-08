@@ -9,11 +9,11 @@
 @using (Html.BeginForm("Index", "Producto", FormMethod.Post))
 {
 <div>
-
+    <h5>Código de Producto</h5>
     @Html.TextBox("cod", "", new { @class = "form-control" })
-
+    <h5>Nombre de Producto</h5>
     @Html.TextBox("cadena", "", new { @class = "form-control" })
-
+    
     <button type="submit" class="btn-default">Buscar</button>
 </div>
 }
