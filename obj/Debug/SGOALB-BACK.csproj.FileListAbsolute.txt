@@ -95,7 +95,6 @@ C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\bin\System.Web.Http.WebHost.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\bin\System.Net.Http.Formatting.xml
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\bin\System.Web.Http.xml
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\bin\System.Web.Http.WebHost.xml
-C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB_BACK.Migrations.CorrecionProducto.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB_BACK.Migrations.CreoCategoria.resources
 C:\Users\marco\Documents\PROYECTOS\SGOALB-Back\bin\SGOALB-BACK.dll.config
@@ -411,3 +410,4 @@ C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.csp
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorreccionOrden.resources

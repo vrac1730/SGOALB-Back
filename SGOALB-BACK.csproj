@@ -143,7 +143,9 @@
     <Compile Include="Controllers\API\ProductoController.cs" />
     <Compile Include="Controllers\API\SolicitudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductoesController.cs" />
+    <Compile Include="Controllers\OrdenCompraController.cs" />
+    <Compile Include="Controllers\OrdenSalidaController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +176,10 @@
     <Compile Include="Migrations\202106020206056_CorrecionCodigo.cs" />
     <Compile Include="Migrations\202106020206056_CorrecionCodigo.Designer.cs">
       <DependentUpon>202106020206056_CorrecionCodigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106080454497_CorreccionOrden.cs" />
+    <Compile Include="Migrations\202106080454497_CorreccionOrden.Designer.cs">
+      <DependentUpon>202106080454497_CorreccionOrden.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -243,6 +249,16 @@
     <Content Include="Views\Almacen\Details.cshtml" />
     <Content Include="Views\Almacen\Edit.cshtml" />
     <Content Include="Views\Almacen\Index.cshtml" />
+    <Content Include="Views\OrdenCompra\Create.cshtml" />
+    <Content Include="Views\OrdenCompra\Delete.cshtml" />
+    <Content Include="Views\OrdenCompra\Details.cshtml" />
+    <Content Include="Views\OrdenCompra\Edit.cshtml" />
+    <Content Include="Views\OrdenCompra\Index.cshtml" />
+    <Content Include="Views\OrdenSalida\Create.cshtml" />
+    <Content Include="Views\OrdenSalida\Delete.cshtml" />
+    <Content Include="Views\OrdenSalida\Details.cshtml" />
+    <Content Include="Views\OrdenSalida\Edit.cshtml" />
+    <Content Include="Views\OrdenSalida\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106020206056_CorrecionCodigo.resx">
       <DependentUpon>202106020206056_CorrecionCodigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106080454497_CorreccionOrden.resx">
+      <DependentUpon>202106080454497_CorreccionOrden.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

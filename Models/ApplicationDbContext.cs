@@ -16,6 +16,10 @@ namespace SGOALB_BACK.Models
         public DbSet<DetalleSalida> DetalleSalidas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cotizacion> Cotizaciones { get; set; }
+        public DbSet<Local> Locales { get; set; }
+        public DbSet<Proveedor> Proveedores { get; set; }
+        public DbSet<Estado> Estados { get; set; }
+        public DbSet<Almacen> Almacenes { get; set; }
         public ApplicationDbContext() : base("DefaultConnection")
         {
             
@@ -29,9 +33,5 @@ namespace SGOALB_BACK.Models
             modelBuilder.Entity<Cotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });
             base.OnModelCreating(modelBuilder);
         }
-
-        public System.Data.Entity.DbSet<SGOALB_BACK.Models.Almacen> Almacens { get; set; }
-
-        public System.Data.Entity.DbSet<SGOALB_BACK.Models.Estado> Estadoes { get; set; }
     }
 }

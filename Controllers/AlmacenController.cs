@@ -17,7 +17,7 @@ namespace SGOALB_BACK.Controllers
         // GET: Almacen
         public ActionResult Index()
         {
-            return View(db.Almacens.ToList());
+            return View(db.Almacenes.ToList());
         }
 
         // GET: Almacen/Details/5
@@ -27,7 +27,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Almacen almacen = db.Almacens.Find(id);
+            Almacen almacen = db.Almacenes.Find(id);
             if (almacen == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace SGOALB_BACK.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Almacens.Add(almacen);
+                db.Almacenes.Add(almacen);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Almacen almacen = db.Almacens.Find(id);
+            Almacen almacen = db.Almacenes.Find(id);
             if (almacen == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Almacen almacen = db.Almacens.Find(id);
+            Almacen almacen = db.Almacenes.Find(id);
             if (almacen == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace SGOALB_BACK.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Almacen almacen = db.Almacens.Find(id);
-            db.Almacens.Remove(almacen);
+            Almacen almacen = db.Almacenes.Find(id);
+            db.Almacenes.Remove(almacen);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
