@@ -11,11 +11,9 @@ namespace SGOALB_BACK.Models
     {
         [Key]
         public int id { get; set; }
+        public string nombre { get; set; }
+        public string direccion { get; set; }
 
-        [DisplayName("Cantidad")]
-        public int cantidad { get; set; }
-        public DateTime fecha_ingreso { get; set; }
-        public DateTime fecha_salida { get; set; }
-        public String direccion { get; set; }
+        public List<ProductoxAlmacen> ProductoxAlmacen { get; set; }
     }
 }

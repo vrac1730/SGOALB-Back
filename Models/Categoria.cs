@@ -11,7 +11,6 @@ namespace SGOALB_BACK.Models
     {
         [Key]
         public int id { get; set; }
-
         [DisplayName("Categoria")]
         public string nombre { get; set; }
         public string descripcion { get; set; }

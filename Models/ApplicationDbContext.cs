@@ -20,6 +20,8 @@ namespace SGOALB_BACK.Models
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Almacen> Almacenes { get; set; }
+        public DbSet<ProductoxAlmacen> ProductosxAlmacen { get; set; }
+        public DbSet<Persona> Personas { get; set; }
         public ApplicationDbContext() : base("DefaultConnection")
         {
             
@@ -28,9 +30,9 @@ namespace SGOALB_BACK.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UsuarioxRol>().HasKey(x => new { x.idUsuario, x.idRol });
-            modelBuilder.Entity<DetalleCompra>().HasKey(x => new { x.idProducto, x.idOrdenCompra });
+            modelBuilder.Entity<RolxPermiso>().HasKey(x => new { x.idRol, x.idPermiso });
             modelBuilder.Entity<DetalleSalida>().HasKey(x => new { x.idOrdenSalida, x.idProducto });
-            modelBuilder.Entity<Cotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });
+            modelBuilder.Entity<Cotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });   
             base.OnModelCreating(modelBuilder);
         }
     }

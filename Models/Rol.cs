@@ -13,5 +13,6 @@ namespace SGOALB_BACK.Models
         public string nombre { get; set; }
 
         public List<UsuarioxRol> UsuarioxRol { get; set; }
+        public List<RolxPermiso> RolxPermiso { get; set; }
     }
 }

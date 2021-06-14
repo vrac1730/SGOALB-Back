@@ -17,7 +17,7 @@ namespace SGOALB_BACK.Controllers
         // GET: Productoes
         public ActionResult Index(string cadena, string cod)
         {
-            if (cod == null && cadena == null)
+            /*if (cod == null && cadena == null)
             {
                 var result = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).ToList();
                 return View(result);
@@ -35,9 +35,9 @@ namespace SGOALB_BACK.Controllers
                 return View(r2);
             }           
 
-            var resultado = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).ToList();
+            var resultado = db.Productos.Include(p => p.Almacen).Include(p => p.Categoria).Include(p => p.Estado).ToList();*/
 
-            return View(resultado);
+            return View();
         }
 
         // GET: Productoes/Details/5
@@ -78,7 +78,7 @@ namespace SGOALB_BACK.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idAlmacen = new SelectList(db.Almacenes, "id", "direccion", producto.idAlmacen);
+            //ViewBag.idAlmacen = new SelectList(db.Almacenes, "id", "direccion", producto.idAlmacen);
             ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombre", producto.idCategoria);
             ViewBag.idEstado = new SelectList(db.Estados, "id", "nombre", producto.idEstado);
             return View(producto);
@@ -96,7 +96,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idAlmacen = new SelectList(db.Almacenes, "id", "direccion", producto.idAlmacen);
+            //ViewBag.idAlmacen = new SelectList(db.Almacenes, "id", "direccion", producto.idAlmacen);
             ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombre", producto.idCategoria);
             ViewBag.idEstado = new SelectList(db.Estados, "id", "nombre", producto.idEstado);
             return View(producto);
@@ -115,7 +115,7 @@ namespace SGOALB_BACK.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idAlmacen = new SelectList(db.Almacenes, "id", "direccion", producto.idAlmacen);
+            //ViewBag.idAlmacen = new SelectList(db.Almacenes, "id", "direccion", producto.idAlmacen);
             ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombre", producto.idCategoria);
             ViewBag.idEstado = new SelectList(db.Estados, "id", "nombre", producto.idEstado);
             return View(producto);

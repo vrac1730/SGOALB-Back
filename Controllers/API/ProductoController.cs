@@ -26,14 +26,14 @@ namespace SGOALB_BACK.Controllers.API
         public List<Producto> GetProductos()
         {
 
-            return _context.Productos.Include(m=>m.Almacen).ToList();
+            return _context.Productos.ToList();
         }
 
         // GET /api/productos/1
         [Route("api/productos/cod{cod}")]
         public Producto GetProductoByCodigo(string cod)
         {
-            var data = _context.Productos.Include(m => m.Almacen).FirstOrDefault(m => m.codigo == cod);
+            var data = _context.Productos.FirstOrDefault(m => m.codigo == cod);
 
             if (data == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -45,7 +45,7 @@ namespace SGOALB_BACK.Controllers.API
         [Route("api/productos/{nom}")]
         public List<Producto> GetProductoByNombre(string nom)
         {
-            var data = _context.Productos.Include(m => m.Almacen).Where(m => m.nombre.Contains(nom)).ToList();
+            var data = _context.Productos.Where(m => m.nombre.Contains(nom)).ToList();
 
             if (data == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);

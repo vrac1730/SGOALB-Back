@@ -14,18 +14,17 @@ namespace SGOALB_BACK.Models
         public int id { get; set; }
         [DisplayName("Código de orden")]
         public string codigo { get; set; }
-        [Column(TypeName = "datetime2")]
-        [DisplayName("Fecha de Orden")]
-        public DateTime fecha_orden { get; set; }
+        [Column(TypeName = "datetime2"), DisplayName("Fecha de Orden")]
+        public DateTime fechaOrden { get; set; }
         [DisplayName("Fecha de Pago")]
-        public DateTime fecha_pago { get; set; }
+        public DateTime fechaPago { get; set; }
         [DisplayName("Monto Total")]
-        public double monto_total { get; set; }
+        public double montoTotal { get; set; }
         public int idUsuario { get; set; }
+
         [ForeignKey("idUsuario")]
         public virtual Usuario Usuario { get; set; }
 
         public List<DetalleCompra> DetalleCompras { get; set; }
-
     }
 }

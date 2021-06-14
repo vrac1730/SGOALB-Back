@@ -12,12 +12,16 @@ namespace SGOALB_BACK.Models
     {
         [Key]
         public int id { get; set; }
-        [DisplayName("Encargado")]
-        public string nombre { get; set; }
-
+        public string username { get; set; }
+        public string correo { get; set; }
+        public string contraseña { get; set; }
         public int idLocal { get; set; }
+        public int idPersona { get; set; }
+
         [ForeignKey("idLocal")]
         public Local Local { get; set; }
+        [ForeignKey("idPersona")]
+        public Persona Persona { get; set; }
 
         public List<UsuarioxRol> UsuarioxRol { get; set; }
         public List<OrdenCompra> OrdenCompra { get; set; }

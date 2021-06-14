@@ -13,10 +13,10 @@ namespace SGOALB_BACK.Models
         public int id { get; set; }
         [Column(TypeName = "datetime2")]
         public DateTime fecha { get; set; }
-        public double total { get; set; }
+        public double montoTotal { get; set; }
         public double igv { get; set; }
-
         public int idProveedor { get; set; }
+
         [ForeignKey("idProveedor")]
         public virtual Proveedor Proveedor { get; set; }
 

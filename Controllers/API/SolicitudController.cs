@@ -59,7 +59,7 @@ namespace SGOALB_BACK.Controllers.API
         }
 
         [Route("api/ordensalida/estado/{estado}")]
-        public List<OrdenSalida> GetOrdenSalidaxestado(String estado)
+        public List<OrdenSalida> GetOrdenSalidaxestado(string estado)
         {
             var data = _context.OrdenSalidas.Where(e => e.estado.Contains(estado)).ToList();
 

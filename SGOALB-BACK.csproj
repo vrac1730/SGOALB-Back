@@ -181,6 +181,10 @@
     <Compile Include="Migrations\202106080454497_CorreccionOrden.Designer.cs">
       <DependentUpon>202106080454497_CorreccionOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106140114389_Correccion2.5.cs" />
+    <Compile Include="Migrations\202106140114389_Correccion2.5.Designer.cs">
+      <DependentUpon>202106140114389_Correccion2.5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -194,9 +198,13 @@
     <Compile Include="Models\Local.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
     <Compile Include="Models\OrdenSalida.cs" />
+    <Compile Include="Models\Permiso.cs" />
+    <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ProductoxAlmacen.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\RolxPermiso.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioxRol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -298,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106080454497_CorreccionOrden.resx">
       <DependentUpon>202106080454497_CorreccionOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106140114389_Correccion2.5.resx">
+      <DependentUpon>202106140114389_Correccion2.5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

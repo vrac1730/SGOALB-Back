@@ -43,7 +43,7 @@ namespace SGOALB_BACK.Controllers.API
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            data.fecha_orden = DateTime.Today;
+            data.fechaOrden = DateTime.Today;
             data.codigo = "A00" + data.id;
 
             _context.OrdenCompras.Add(data);           
@@ -72,7 +72,7 @@ namespace SGOALB_BACK.Controllers.API
             if (OrdenCompraInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            OrdenCompraInDb.fecha_pago = data.fecha_pago;
+            OrdenCompraInDb.fechaPago = data.fechaPago;
 
             _context.SaveChanges();
 

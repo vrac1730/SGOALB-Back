@@ -8,14 +8,12 @@ using System.Web;
 namespace SGOALB_BACK.Models
 {
     public class UsuarioxRol
-    {
-        //[Key]
-        public int idUsuario { get; set; }
+    {        
+        public int idUsuario { get; set; }         
+        public int idRol { get; set; }
+    
         [ForeignKey("idUsuario")]
         public virtual Usuario Usuario { get; set; }
-        
-        //[Key]
-        public int idRol { get; set; }
         [ForeignKey("idRol")]
         public virtual Rol Rol { get; set; }
     }
