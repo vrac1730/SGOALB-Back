@@ -13,8 +13,6 @@ namespace SGOALB_BACK.Models
         public int id{ get; set; }        
         public int cantidad { get; set; }
         public string observacion { get; set; }
-        public bool stock { get; set; }
-        public string estado { get; set; }
         public int idProducto { get; set; }
         public int idOrdenSalida { get; set; }
 

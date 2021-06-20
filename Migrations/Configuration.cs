@@ -20,7 +20,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-            /*
+            
             context.Personas.AddOrUpdate(x => x.id,
                new Persona() { id = 1, dni = 12345678, nombre = "Jose", aPaterno = "Zapata", aMaterno = "Tuñoque", celular = 123456789 },
                new Persona() { id = 2, dni = 70360207, nombre = "Victor", aPaterno = "Alarcón", aMaterno = "Campos", celular = 963109798 },
@@ -43,11 +43,10 @@
                new Categoria() { id = 5, nombre = "Regalos", descripcion = "Buena calidad" }
                );
             context.Estados.AddOrUpdate(x => x.id,
-                new Estado() { id = 1, nombre = "Defectuoso", descripcion = "Buena calidad" },
-                new Estado() { id = 2, nombre = "Excelente", descripcion = "Buena calidad" },
-                new Estado() { id = 3, nombre = "Incompleto", descripcion = "Mala calidad" },
-                new Estado() { id = 4, nombre = "Completo", descripcion = "Buena calidad" },
-                new Estado() { id = 5, nombre = "Bueno", descripcion = "Mala calidad" }
+                new Estado() { id = 1, nombre = "Bajo Stock", descripcion = "Buena calidad" },
+                new Estado() { id = 2, nombre = "Punto Pedido", descripcion = "Buena calidad" },
+                new Estado() { id = 3, nombre = "Stock Disponible", descripcion = "Mala calidad" },
+                new Estado() { id = 4, nombre = "En pedido", descripcion = "Buena calidad" }
                 );
             context.Locales.AddOrUpdate(x => x.id,
                 new Local() { id = 1, nombre = "Surco", direccion = "Av: los benavides 4950", telefono = 2761534, ruc = 205012345678, razon_social = "" },
@@ -119,7 +118,7 @@
                 new DetalleCompra() { id = 1, cantidad = 20, total = 800, idProducto = 1, idProveedor = 3, idOrdenCompra = 1 },
                 new DetalleCompra() { id = 2, cantidad = 20, total = 800, idProducto = 2, idProveedor = 3, idOrdenCompra = 1 },
                 new DetalleCompra() { id = 3, cantidad = 20, total = 800, idProducto = 3, idProveedor = 2, idOrdenCompra = 2 }
-                );    */
+                );    
         }
     }
 }

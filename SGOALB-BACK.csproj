@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202106200159469_TablasActualizadas.Designer.cs">
       <DependentUpon>202106200159469_TablasActualizadas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106200259213_CambiosEstado.cs" />
+    <Compile Include="Migrations\202106200259213_CambiosEstado.Designer.cs">
+      <DependentUpon>202106200259213_CambiosEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106200159469_TablasActualizadas.resx">
       <DependentUpon>202106200159469_TablasActualizadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106200259213_CambiosEstado.resx">
+      <DependentUpon>202106200259213_CambiosEstado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
