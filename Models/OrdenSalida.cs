@@ -16,7 +16,6 @@ namespace SGOALB_BACK.Models
         public DateTime fecha { get; set; }
         [DisplayName("Código de orden")]
         public string codigo { get; set; }
-        [DisplayName("Estado")]
         public string estado { get; set; }
         public int idUsuario { get; set; }
 

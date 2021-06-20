@@ -21,6 +21,7 @@ namespace SGOALB_BACK.Models
         [DisplayName("Monto Total")]
         public double montoTotal { get; set; }
         public int idUsuario { get; set; }
+        public int idProveedor { get; set; }
 
         [ForeignKey("idUsuario")]
         public virtual Usuario Usuario { get; set; }

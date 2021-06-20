@@ -31,7 +31,6 @@ namespace SGOALB_BACK.Models
         {
             modelBuilder.Entity<UsuarioxRol>().HasKey(x => new { x.idUsuario, x.idRol });
             modelBuilder.Entity<RolxPermiso>().HasKey(x => new { x.idRol, x.idPermiso });
-            modelBuilder.Entity<DetalleSalida>().HasKey(x => new { x.idOrdenSalida, x.idProducto });
             modelBuilder.Entity<Cotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });   
             base.OnModelCreating(modelBuilder);
         }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace SGOALB_BACK.Models
-{
+{/*
     public class Factura
     {
         [Key]
@@ -21,5 +21,5 @@ namespace SGOALB_BACK.Models
         public virtual Proveedor Proveedor { get; set; }
 
         public List<DetalleFactura> DetalleFactura { get; set; }
-    }
+    }*/
 }

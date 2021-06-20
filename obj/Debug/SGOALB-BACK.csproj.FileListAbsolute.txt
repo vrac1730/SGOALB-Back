@@ -413,3 +413,4 @@ C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorreccionOrden.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Correccion25.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.TablasActualizadas.resources

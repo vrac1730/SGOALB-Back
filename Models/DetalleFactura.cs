@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace SGOALB_BACK.Models
-{
+{/*
     public class DetalleFactura
     {
         [Key]
@@ -20,5 +20,5 @@ namespace SGOALB_BACK.Models
         public virtual Factura Factura { get; set; }
         [ForeignKey("idProductoAlmacen")]
         public virtual ProductoxAlmacen ProductoxAlmacen { get; set; }
-    }
+    }*/
 }

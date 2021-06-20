@@ -40,7 +40,7 @@ namespace SGOALB_BACK.Models
         [ForeignKey("idEstado")]
         public Estado Estado { get; set; }
        
-        public List<DetalleSalida> DetalleSalida { get; set; }
+        //public List<DetalleSalida> DetalleSalida { get; set; }
         public List<Cotizacion> Cotizacion { get; set; }
     }
 }

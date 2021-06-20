@@ -20,7 +20,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-            
+            /*
             context.Personas.AddOrUpdate(x => x.id,
                new Persona() { id = 1, dni = 12345678, nombre = "Jose", aPaterno = "Zapata", aMaterno = "Tuñoque", celular = 123456789 },
                new Persona() { id = 2, dni = 70360207, nombre = "Victor", aPaterno = "Alarcón", aMaterno = "Campos", celular = 963109798 },
@@ -119,7 +119,7 @@
                 new DetalleCompra() { id = 1, cantidad = 20, total = 800, idProducto = 1, idProveedor = 3, idOrdenCompra = 1 },
                 new DetalleCompra() { id = 2, cantidad = 20, total = 800, idProducto = 2, idProveedor = 3, idOrdenCompra = 1 },
                 new DetalleCompra() { id = 3, cantidad = 20, total = 800, idProducto = 3, idProveedor = 2, idOrdenCompra = 2 }
-                );    
+                );    */
         }
     }
 }

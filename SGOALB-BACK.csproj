@@ -185,6 +185,10 @@
     <Compile Include="Migrations\202106140114389_Correccion2.5.Designer.cs">
       <DependentUpon>202106140114389_Correccion2.5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106200159469_TablasActualizadas.cs" />
+    <Compile Include="Migrations\202106200159469_TablasActualizadas.Designer.cs">
+      <DependentUpon>202106200159469_TablasActualizadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -309,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106140114389_Correccion2.5.resx">
       <DependentUpon>202106140114389_Correccion2.5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106200159469_TablasActualizadas.resx">
+      <DependentUpon>202106200159469_TablasActualizadas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

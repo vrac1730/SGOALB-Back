@@ -9,10 +9,14 @@ namespace SGOALB_BACK.Models
 {
     public class DetalleSalida
     {
-        public int idOrdenSalida { get; set; }
-        public int idProducto { get; set; }
+        [Key]
+        public int id{ get; set; }        
         public int cantidad { get; set; }
         public string observacion { get; set; }
+        public bool stock { get; set; }
+        public string estado { get; set; }
+        public int idProducto { get; set; }
+        public int idOrdenSalida { get; set; }
 
         [ForeignKey("idOrdenSalida")]
         public virtual OrdenSalida OrdenSalida { get; set; }
