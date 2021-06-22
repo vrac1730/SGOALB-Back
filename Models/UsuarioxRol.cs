@@ -7,6 +7,7 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("Usuario_Rol")]
     public class UsuarioxRol
     {        
         public int idUsuario { get; set; }         

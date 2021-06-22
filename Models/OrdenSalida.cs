@@ -8,14 +8,16 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("Solicitud")]
     public class OrdenSalida
     {
         [Key]
         public int id { get; set; }
         [Column(TypeName = "datetime2"), DisplayName("Fecha")]
         public DateTime fecha { get; set; }
-        [DisplayName("Código de orden")]
+        [DisplayName("Código de Solicitud")]
         public string codigo { get; set; }
+        [DisplayName("Estado")]
         public string estado { get; set; }
         public int idUsuario { get; set; }
 

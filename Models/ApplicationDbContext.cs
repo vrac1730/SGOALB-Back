@@ -19,6 +19,7 @@ namespace SGOALB_BACK.Models
         public DbSet<Local> Locales { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Estado> Estados { get; set; }
+        public DbSet<Alerta> Alertas { get; set; }
         public DbSet<Almacen> Almacenes { get; set; }
         public DbSet<ProductoxAlmacen> ProductosxAlmacen { get; set; }
         public DbSet<Persona> Personas { get; set; }

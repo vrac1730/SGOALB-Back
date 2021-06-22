@@ -29,7 +29,7 @@ namespace SGOALB_BACK.Controllers.API
             if (detalle == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            detalle.cantidad = data.cantidad;
+            detalle.cantSolicitada = data.cantSolicitada;
             detalle.observacion = data.observacion;
 
             _context.SaveChanges();

@@ -8,6 +8,7 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("ProductoAlmacen")]
     public class ProductoxAlmacen
     {
         [Key]
@@ -16,12 +17,15 @@ namespace SGOALB_BACK.Models
         public int cantidad { get; set; }
         public DateTime fecha_ingreso { get; set; }
         public DateTime fecha_salida { get; set; }
-        public int idProducto { get; set; }        
+        public int idProducto { get; set; }
+        public int idEstado { get; set; }
         public int idAlmacen { get; set; }
 
         [ForeignKey("idProducto")]
-        public virtual Producto Producto { get; set; }
+        public Producto Producto { get; set; }
+        [ForeignKey("idEstado")]
+        public Estado Estado { get; set; }
         [ForeignKey("idAlmacen")]
-        public virtual Almacen Almacen { get; set; }
+        public Almacen Almacen { get; set; }
     }
 }

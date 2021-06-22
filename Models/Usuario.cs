@@ -8,6 +8,7 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("Usuario")]
     public class Usuario
     {
         [Key]

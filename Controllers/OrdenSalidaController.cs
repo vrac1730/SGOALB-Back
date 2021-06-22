@@ -17,29 +17,33 @@ namespace SGOALB_BACK.Controllers
         // GET: OrdenSalida
         public ActionResult Index()
         {
-            var ordenSalidas = db.OrdenSalidas.Include(o => o.Usuario.Local);
+            //busqueda por rango de fechas, estado
+            var ordenSalidas = db.OrdenSalidas.Include(o => o.Usuario.Local).Include(o=> o.Usuario.Persona);
             return View(ordenSalidas.ToList());
         }
 
         // GET: OrdenSalida/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
+            if (id == null)            
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OrdenSalida ordenSalida = db.OrdenSalidas.Find(id);
+            
+            OrdenSalida ordenSalida = db.OrdenSalidas.Include(o => o.Usuario.Persona).Include(o => o.Usuario.Local).FirstOrDefault(o => o.id == id);
+
             if (ordenSalida == null)
-            {
                 return HttpNotFound();
-            }
+            
+            //emplear view model?
+            List<DetalleSalida> productos = db.Set<DetalleSalida>().Include(d => d.Producto.Alerta).Where(d => d.idOrdenSalida == id).ToList();
+            ViewData["Productos"] = productos;
+
             return View(ordenSalida);
         }
 
         // GET: OrdenSalida/Create
         public ActionResult Create()
         {
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre");
+            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username");
             return View();
         }
 
@@ -57,7 +61,7 @@ namespace SGOALB_BACK.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenSalida.idUsuario);
+            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
         }
 
@@ -73,7 +77,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenSalida.idUsuario);
+            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
         }
 
@@ -90,7 +94,7 @@ namespace SGOALB_BACK.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenSalida.idUsuario);
+            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
         }
 

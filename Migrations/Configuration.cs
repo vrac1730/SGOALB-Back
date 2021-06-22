@@ -20,6 +20,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+
             
             context.Personas.AddOrUpdate(x => x.id,
                new Persona() { id = 1, dni = 12345678, nombre = "Jose", aPaterno = "Zapata", aMaterno = "Tuñoque", celular = 123456789 },
@@ -43,11 +44,18 @@
                new Categoria() { id = 5, nombre = "Regalos", descripcion = "Buena calidad" }
                );
             context.Estados.AddOrUpdate(x => x.id,
-                new Estado() { id = 1, nombre = "Bajo Stock", descripcion = "Buena calidad" },
-                new Estado() { id = 2, nombre = "Punto Pedido", descripcion = "Buena calidad" },
-                new Estado() { id = 3, nombre = "Stock Disponible", descripcion = "Mala calidad" },
-                new Estado() { id = 4, nombre = "En pedido", descripcion = "Buena calidad" }
-                );
+               new Estado() { id = 1, nombre = "Defectuoso", descripcion = "Buena calidad" },
+               new Estado() { id = 2, nombre = "Malo", descripcion = "Buena calidad" },
+               new Estado() { id = 3, nombre = "Regular", descripcion = "Mala calidad" },
+               new Estado() { id = 4, nombre = "Bueno", descripcion = "Buena calidad" },
+               new Estado() { id = 5, nombre = "Óptimo", descripcion = "Mala calidad" }
+               );
+            context.Alertas.AddOrUpdate(x => x.id,
+                new Alerta() { id = 1, nombre = "Bajo Stock", descripcion = "" },
+                new Alerta() { id = 2, nombre = "Punto Pedido", descripcion = "" },
+                new Alerta() { id = 3, nombre = "Stock Disponible", descripcion = "" },
+                new Alerta() { id = 4, nombre = "En pedido", descripcion = "" }
+                );            
             context.Locales.AddOrUpdate(x => x.id,
                 new Local() { id = 1, nombre = "Surco", direccion = "Av: los benavides 4950", telefono = 2761534, ruc = 205012345678, razon_social = "" },
                 new Local() { id = 2, nombre = "Miraflores", direccion = "Av: los benavides 950", telefono = 2763434, ruc = 205012345678, razon_social = "" },
@@ -70,12 +78,12 @@
                 new Usuario() { id = 5, username = "Arnold", correo = "arnold@hotmail.com", contraseña = "123", idLocal = 2, idPersona = 5 }
                 );
             context.Productos.AddOrUpdate(x => x.id,
-                new Producto() { id = 1, codigo = "111", nombre = "Cuaderno", descripcion = "Cuaderno de buena calidad", marca = "Loro", stock_min = 1, stock_max = 5, idCategoria = 1, idEstado = 1 },
-                new Producto() { id = 2, codigo = "112", nombre = "Lapiz", descripcion = "Lapiz de buena calidad", marca = "Mongol", stock_min = 1, stock_max = 5, idCategoria = 2, idEstado = 2 },
-                new Producto() { id = 3, codigo = "113", nombre = "Borrador", descripcion = "Borrador de buena calidad", marca = "Faber Castell", stock_min = 1, stock_max = 5, idCategoria = 3, idEstado = 3 },
-                new Producto() { id = 4, codigo = "114", nombre = "Carro", descripcion = "Carro de buena calidad", marca = "Lego", stock_min = 1, stock_max = 5, idCategoria = 4, idEstado = 4 },
-                new Producto() { id = 5, codigo = "115", nombre = "Hoja Bond", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 5, idCategoria = 5, idEstado = 5 },
-                new Producto() { id = 6, codigo = "116", nombre = "Cuaderno", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 5, idCategoria = 2, idEstado = 5 }
+                new Producto() { id = 1, codigo = "111", nombre = "Cuaderno", descripcion = "Cuaderno de buena calidad", marca = "Loro", stock_min = 10, stock_max = 30, idCategoria = 1, idAlerta = 4 },
+                new Producto() { id = 2, codigo = "112", nombre = "Lapiz", descripcion = "Lapiz de buena calidad", marca = "Mongol", stock_min = 10, stock_max = 25, idCategoria = 2, idAlerta = 4 },
+                new Producto() { id = 3, codigo = "113", nombre = "Borrador", descripcion = "Borrador de buena calidad", marca = "Faber Castell", stock_min = 10, stock_max = 25, idCategoria = 3, idAlerta = 4 },
+                new Producto() { id = 4, codigo = "114", nombre = "Carro", descripcion = "Carro de buena calidad", marca = "Lego", stock_min = 5, stock_max = 15, idCategoria = 4, idAlerta = 3 },
+                new Producto() { id = 5, codigo = "115", nombre = "Hoja Bond", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 15, idCategoria = 5, idAlerta = 3 },
+                new Producto() { id = 6, codigo = "116", nombre = "Cuaderno", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 10, stock_max = 30, idCategoria = 2, idAlerta = 1 }
                 );
 
             
@@ -93,13 +101,6 @@
                 new OrdenCompra() { id = 4, codigo = "0004", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1000, idUsuario = 4 },
                 new OrdenCompra() { id = 5, codigo = "0005", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 000, idUsuario = 5 }
                 );
-            context.ProductosxAlmacen.AddOrUpdate(x => x.id,
-                new ProductoxAlmacen() { id = 1, cantidad = 6, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), idAlmacen = 1, idProducto = 1 },
-                new ProductoxAlmacen() { id = 2, cantidad = 7, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), idAlmacen = 1, idProducto = 2 },
-                new ProductoxAlmacen() { id = 3, cantidad = 14, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), idAlmacen = 1, idProducto = 3 },
-                new ProductoxAlmacen() { id = 4, cantidad = 3, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), idAlmacen = 1, idProducto = 4 },
-                new ProductoxAlmacen() { id = 5, cantidad = 9, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), idAlmacen = 1, idProducto = 5 }
-                );                             
             context.Cotizaciones.AddOrUpdate(x => new { x.idProveedor, x.idProducto },
                 new Cotizacion() { idProducto = 1, idProveedor = 1, costo = 22.7 },
                 new Cotizacion() { idProducto = 1, idProveedor = 2, costo = 21.5 },
@@ -110,15 +111,22 @@
                 );
 
             
+            context.ProductosxAlmacen.AddOrUpdate(x => x.id,
+                new ProductoxAlmacen() { id = 1, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 15, idAlmacen = 1, idProducto = 1, idEstado = 1 },
+                new ProductoxAlmacen() { id = 2, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 8, idAlmacen = 1, idProducto = 2, idEstado = 2 },
+                new ProductoxAlmacen() { id = 3, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 6, idAlmacen = 1, idProducto = 3, idEstado = 2 },
+                new ProductoxAlmacen() { id = 4, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 13, idAlmacen = 1, idProducto = 4, idEstado = 3 },
+                new ProductoxAlmacen() { id = 5, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 25, idAlmacen = 1, idProducto = 5, idEstado = 3 }
+                );
             context.DetalleSalidas.AddOrUpdate(x => new { x.idOrdenSalida, x.idProducto },
-                new DetalleSalida() { idOrdenSalida = 1, idProducto = 1, cantidad = 100, observacion = "" },
-                new DetalleSalida() { idOrdenSalida = 1, idProducto = 2, cantidad = 10, observacion = "" }
+                new DetalleSalida() { idOrdenSalida = 1, idProducto = 1, cantSolicitada = 100, cantEntregada = 0, observacion = "" },
+                new DetalleSalida() { idOrdenSalida = 1, idProducto = 2, cantSolicitada = 10, cantEntregada = 0, observacion = "" }
                 );
             context.DetalleCompras.AddOrUpdate(x => x.id,
                 new DetalleCompra() { id = 1, cantidad = 20, total = 800, idProducto = 1, idProveedor = 3, idOrdenCompra = 1 },
                 new DetalleCompra() { id = 2, cantidad = 20, total = 800, idProducto = 2, idProveedor = 3, idOrdenCompra = 1 },
                 new DetalleCompra() { id = 3, cantidad = 20, total = 800, idProducto = 3, idProveedor = 2, idOrdenCompra = 2 }
-                );    
+                );   
         }
     }
 }

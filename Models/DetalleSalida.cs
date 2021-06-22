@@ -7,11 +7,13 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("DetalleSolicitud")]
     public class DetalleSalida
     {
         [Key]
         public int id{ get; set; }        
-        public int cantidad { get; set; }
+        public int cantSolicitada { get; set; }
+        public int cantEntregada { get; set; }
         public string observacion { get; set; }
         public int idProducto { get; set; }
         public int idOrdenSalida { get; set; }

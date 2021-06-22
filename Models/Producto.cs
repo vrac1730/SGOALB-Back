@@ -33,12 +33,12 @@ namespace SGOALB_BACK.Models
         public int stock_max { get; set; }
 
         public int idCategoria { get; set; }      
-        public int idEstado { get; set; }
+        public int idAlerta { get; set; }
 
         [ForeignKey("idCategoria")]
         public Categoria Categoria { get; set; }
-        [ForeignKey("idEstado")]
-        public Estado Estado { get; set; }
+        [ForeignKey("idAlerta")]
+        public Alerta Alerta { get; set; }
        
         //public List<DetalleSalida> DetalleSalida { get; set; }
         public List<Cotizacion> Cotizacion { get; set; }

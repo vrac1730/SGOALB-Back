@@ -136,7 +136,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AlmacenController.cs" />
     <Compile Include="Controllers\API\DetalleCompraController.cs" />
     <Compile Include="Controllers\API\DetalleSolicitudController.cs" />
     <Compile Include="Controllers\API\OrdenCompraController.cs" />
@@ -145,7 +144,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdenCompraController.cs" />
     <Compile Include="Controllers\OrdenSalidaController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\ProductoxAlmacenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,39 +160,12 @@
     <Compile Include="Migrations\202105210109278_CreoCategoria.Designer.cs">
       <DependentUpon>202105210109278_CreoCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105242206524_mOrdenCompraSalida.cs" />
-    <Compile Include="Migrations\202105242206524_mOrdenCompraSalida.Designer.cs">
-      <DependentUpon>202105242206524_mOrdenCompraSalida.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105242231333_Factura.cs" />
-    <Compile Include="Migrations\202105242231333_Factura.Designer.cs">
-      <DependentUpon>202105242231333_Factura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105280233527_ModelosActualizados.cs" />
-    <Compile Include="Migrations\202105280233527_ModelosActualizados.Designer.cs">
-      <DependentUpon>202105280233527_ModelosActualizados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106020206056_CorrecionCodigo.cs" />
-    <Compile Include="Migrations\202106020206056_CorrecionCodigo.Designer.cs">
-      <DependentUpon>202106020206056_CorrecionCodigo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106080454497_CorreccionOrden.cs" />
-    <Compile Include="Migrations\202106080454497_CorreccionOrden.Designer.cs">
-      <DependentUpon>202106080454497_CorreccionOrden.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106140114389_Correccion2.5.cs" />
-    <Compile Include="Migrations\202106140114389_Correccion2.5.Designer.cs">
-      <DependentUpon>202106140114389_Correccion2.5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106200159469_TablasActualizadas.cs" />
-    <Compile Include="Migrations\202106200159469_TablasActualizadas.Designer.cs">
-      <DependentUpon>202106200159469_TablasActualizadas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106200259213_CambiosEstado.cs" />
-    <Compile Include="Migrations\202106200259213_CambiosEstado.Designer.cs">
-      <DependentUpon>202106200259213_CambiosEstado.cs</DependentUpon>
+    <Compile Include="Migrations\202106220136428_AlertasyEstados.cs" />
+    <Compile Include="Migrations\202106220136428_AlertasyEstados.Designer.cs">
+      <DependentUpon>202106220136428_AlertasyEstados.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -253,11 +225,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Producto\Create.cshtml" />
-    <Content Include="Views\Producto\Delete.cshtml" />
-    <Content Include="Views\Producto\Details.cshtml" />
-    <Content Include="Views\Producto\Edit.cshtml" />
-    <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Almacen\Create.cshtml" />
     <Content Include="Views\Almacen\Delete.cshtml" />
     <Content Include="Views\Almacen\Details.cshtml" />
@@ -273,6 +240,11 @@
     <Content Include="Views\OrdenSalida\Details.cshtml" />
     <Content Include="Views\OrdenSalida\Edit.cshtml" />
     <Content Include="Views\OrdenSalida\Index.cshtml" />
+    <Content Include="Views\ProductoxAlmacen\Create.cshtml" />
+    <Content Include="Views\ProductoxAlmacen\Delete.cshtml" />
+    <Content Include="Views\ProductoxAlmacen\Details.cshtml" />
+    <Content Include="Views\ProductoxAlmacen\Edit.cshtml" />
+    <Content Include="Views\ProductoxAlmacen\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -300,29 +272,8 @@
     <EmbeddedResource Include="Migrations\202105210109278_CreoCategoria.resx">
       <DependentUpon>202105210109278_CreoCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105242206524_mOrdenCompraSalida.resx">
-      <DependentUpon>202105242206524_mOrdenCompraSalida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105242231333_Factura.resx">
-      <DependentUpon>202105242231333_Factura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105280233527_ModelosActualizados.resx">
-      <DependentUpon>202105280233527_ModelosActualizados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106020206056_CorrecionCodigo.resx">
-      <DependentUpon>202106020206056_CorrecionCodigo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106080454497_CorreccionOrden.resx">
-      <DependentUpon>202106080454497_CorreccionOrden.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106140114389_Correccion2.5.resx">
-      <DependentUpon>202106140114389_Correccion2.5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106200159469_TablasActualizadas.resx">
-      <DependentUpon>202106200159469_TablasActualizadas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106200259213_CambiosEstado.resx">
-      <DependentUpon>202106200259213_CambiosEstado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106220136428_AlertasyEstados.resx">
+      <DependentUpon>202106220136428_AlertasyEstados.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

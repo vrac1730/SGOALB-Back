@@ -6,6 +6,7 @@ using System.Web;
 
 namespace SGOALB_BACK.Models
 {
+    [Table("Rol_Permiso")]
     public class RolxPermiso
     {
         public int idRol { get; set; } 
