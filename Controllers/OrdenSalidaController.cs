@@ -18,8 +18,8 @@ namespace SGOALB_BACK.Controllers
         public ActionResult Index()
         {
             //busqueda por rango de fechas, estado
-            var ordenSalidas = db.OrdenSalidas.Include(o => o.Usuario.Local).Include(o=> o.Usuario.Persona);
-            return View(ordenSalidas.ToList());
+            var ordenSalidas = db.OrdenSalidas.Include(o => o.Usuario.Local).Include(o=> o.Usuario.Persona).ToList();
+            return View(ordenSalidas);
         }
 
         // GET: OrdenSalida/Details/5
@@ -28,12 +28,11 @@ namespace SGOALB_BACK.Controllers
             if (id == null)            
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             
-            OrdenSalida ordenSalida = db.OrdenSalidas.Include(o => o.Usuario.Persona).Include(o => o.Usuario.Local).FirstOrDefault(o => o.id == id);
+            OrdenSalida ordenSalida = db.OrdenSalidas.Include(o => o.Usuario.Persona).Include(o => o.Usuario.Local).Include(o=>o.DetalleSalida).FirstOrDefault(o => o.id == id);
 
             if (ordenSalida == null)
                 return HttpNotFound();
             
-            //emplear view model?
             List<DetalleSalida> productos = db.Set<DetalleSalida>().Include(d => d.Producto.Alerta).Where(d => d.idOrdenSalida == id).ToList();
             ViewData["Productos"] = productos;
 
@@ -69,14 +68,13 @@ namespace SGOALB_BACK.Controllers
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); 
+
             OrdenSalida ordenSalida = db.OrdenSalidas.Find(id);
+
             if (ordenSalida == null)
-            {
                 return HttpNotFound();
-            }
+            
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
         }

@@ -160,9 +160,9 @@
     <Compile Include="Migrations\202105210109278_CreoCategoria.Designer.cs">
       <DependentUpon>202105210109278_CreoCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106220136428_AlertasyEstados.cs" />
-    <Compile Include="Migrations\202106220136428_AlertasyEstados.Designer.cs">
-      <DependentUpon>202106220136428_AlertasyEstados.cs</DependentUpon>
+    <Compile Include="Migrations\202106230439139_ProveedorEnOrdenCompra.cs" />
+    <Compile Include="Migrations\202106230439139_ProveedorEnOrdenCompra.Designer.cs">
+      <DependentUpon>202106230439139_ProveedorEnOrdenCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
@@ -272,8 +272,8 @@
     <EmbeddedResource Include="Migrations\202105210109278_CreoCategoria.resx">
       <DependentUpon>202105210109278_CreoCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106220136428_AlertasyEstados.resx">
-      <DependentUpon>202106220136428_AlertasyEstados.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106230439139_ProveedorEnOrdenCompra.resx">
+      <DependentUpon>202106230439139_ProveedorEnOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

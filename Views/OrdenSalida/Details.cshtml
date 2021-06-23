@@ -36,7 +36,7 @@
         <dd>
             @Html.DisplayFor(model => model.fecha)
         </dd>
-        
+
         <dt>
             @Html.DisplayNameFor(model => model.estado)
         </dt>
@@ -44,40 +44,49 @@
             @Html.DisplayFor(model => model.estado)
         </dd>
     </dl>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Marca</th>
-                <th>Solicitado</th>
-                <th>Entregado</th>
-                <th>Observación</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in ViewData["Productos"] as IEnumerable<SGOALB_BACK.Models.DetalleSalida>)
-            {
+
+    @if (Model.DetalleSalida.Count() == 0)
+    {
+        <p>Aún no hay productos asociados a esta solicitud.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @item.Producto.nombre
-                    </td>
-                    <td>
-                        @item.Producto.marca
-                    </td>
-                    <td>
-                        @item.cantSolicitada
-                    </td>
-                    <td>
-                        @item.cantEntregada
-                    </td>
-                    <td>
-                        @item.Producto.Alerta.nombre
-                    </td>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Solicitado</th>
+                    <th>Entregado</th>
+                    <th>Observación</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewData["Productos"] as IEnumerable<SGOALB_BACK.Models.DetalleSalida>)
+                {
+                    <tr>
+                        <td>
+                            @item.Producto.nombre
+                        </td>
+                        <td>
+                            @item.Producto.marca
+                        </td>
+                        <td>
+                            @item.cantSolicitada
+                        </td>
+                        <td>
+                            @item.cantEntregada
+                        </td>
+                        <td>
+                            @item.Producto.Alerta.nombre
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
+
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
     @Html.ActionLink("Regresar", "Index")

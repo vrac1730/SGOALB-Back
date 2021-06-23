@@ -26,6 +26,8 @@ namespace SGOALB_BACK.Models
 
         [ForeignKey("idUsuario")]
         public virtual Usuario Usuario { get; set; }
+        [ForeignKey("idProveedor")]
+        public virtual Proveedor Proveedor { get; set; } 
 
         public List<DetalleCompra> DetalleCompras { get; set; }
     }
