@@ -15,16 +15,19 @@
             @Html.DisplayNameFor(model => model.codigo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Usuario.nombre)
+            @Html.DisplayNameFor(model => model.Usuario.Local.nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fecha_orden)
+            @Html.DisplayNameFor(model => model.Proveedor.nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fecha_pago)
+            @Html.DisplayNameFor(model => model.fechaOrden)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.monto_total)
+            @Html.DisplayNameFor(model => model.fechaPago)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.montoTotal)
         </th>
         <th></th>
     </tr>
@@ -35,17 +38,19 @@
             @Html.DisplayFor(modelItem => item.codigo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Usuario.nombre)
+            @Html.DisplayFor(modelItem => item.Usuario.Local.nombre)
         </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_orden)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_pago)
+                <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.monto_total)
+            @Html.DisplayFor(modelItem => item.fechaOrden)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaPago)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.montoTotal)
         </td>
         <td>
             @Html.ActionLink("Ver", "Details", new { id = item.id }) |

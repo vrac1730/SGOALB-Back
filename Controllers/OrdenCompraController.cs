@@ -17,7 +17,7 @@ namespace SGOALB_BACK.Controllers
         // GET: OrdenCompra
         public ActionResult Index()
         {
-            var ordenCompras = db.OrdenCompras.Include(o => o.Usuario);
+            var ordenCompras = db.OrdenCompras.Include(o => o.Proveedor).Include(o => o.Usuario.Local);
             return View(ordenCompras.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OrdenCompra ordenCompra = db.OrdenCompras.Find(id);
+            OrdenCompra ordenCompra = db.OrdenCompras.Include(o => o.Usuario.Local).FirstOrDefault(o => o.id == id);
             if (ordenCompra == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,8 @@ namespace SGOALB_BACK.Controllers
         // GET: OrdenCompra/Create
         public ActionResult Create()
         {
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre");
+            ViewBag.idProveedor = new SelectList(db.Proveedores, "id", "nombre");
+            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username");
             return View();
         }
 
@@ -48,10 +49,15 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,codigo,fecha_orden,fecha_pago,monto_total,idUsuario")] OrdenCompra ordenCompra)
+        public ActionResult Create([Bind(Include = "id,codigo,fechaOrden,fechaPago,montoTotal,idUsuario,idProveedor")] OrdenCompra ordenCompra)
         {
             if (ModelState.IsValid)
             {
+                ordenCompra.montoTotal = 0;
+                var os = db.OrdenCompras.OrderByDescending(o => o.id).FirstOrDefault(o => o.montoTotal == ordenCompra.montoTotal);
+                int id = os.id + 1;
+                ordenCompra.codigo = "000" + id;
+                //---------------------------------
                 db.OrdenCompras.Add(ordenCompra);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,7 +88,7 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,codigo,fecha_orden,fecha_pago,monto_total,idUsuario")] OrdenCompra ordenCompra)
+        public ActionResult Edit([Bind(Include = "id,codigo,fechaOrden,fechaPago,montoTotal,idUsuario,idProveedor")] OrdenCompra ordenCompra)
         {
             if (ModelState.IsValid)
             {
