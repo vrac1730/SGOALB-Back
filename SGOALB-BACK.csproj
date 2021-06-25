@@ -164,6 +164,10 @@
     <Compile Include="Migrations\202106230439139_ProveedorEnOrdenCompra.Designer.cs">
       <DependentUpon>202106230439139_ProveedorEnOrdenCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106242248138_EstadoRequerido.cs" />
+    <Compile Include="Migrations\202106242248138_EstadoRequerido.Designer.cs">
+      <DependentUpon>202106242248138_EstadoRequerido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -274,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106230439139_ProveedorEnOrdenCompra.resx">
       <DependentUpon>202106230439139_ProveedorEnOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106242248138_EstadoRequerido.resx">
+      <DependentUpon>202106242248138_EstadoRequerido.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -16,8 +16,7 @@ namespace SGOALB_BACK.Controllers
 
         // GET: OrdenSalida
         public ActionResult Index()
-        {
-            //busqueda por rango de fechas, estado
+        {   //busqueda por rango de fechas, estado            
             var ordenSalidas = db.OrdenSalidas.Include(o => o.Usuario.Local).Include(o=> o.Usuario.Persona).ToList();
             return View(ordenSalidas);
         }
@@ -55,6 +54,11 @@ namespace SGOALB_BACK.Controllers
         {
             if (ModelState.IsValid)
             {
+                ordenSalida.estado = "Pendiente";
+                var os = db.OrdenSalidas.OrderByDescending(o => o.id).FirstOrDefault(o => o.estado == ordenSalida.estado);
+                int id = os.id + 1;
+                ordenSalida.codigo = "000"+id;
+                //la alerta de los detalles cambia a pendiente
                 db.OrdenSalidas.Add(ordenSalida);
                 db.SaveChanges();
                 return RedirectToAction("Index");
