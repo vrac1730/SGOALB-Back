@@ -168,6 +168,10 @@
     <Compile Include="Migrations\202106242248138_EstadoRequerido.Designer.cs">
       <DependentUpon>202106242248138_EstadoRequerido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106250313137_CantidadCatalogoProducto.cs" />
+    <Compile Include="Migrations\202106250313137_CantidadCatalogoProducto.Designer.cs">
+      <DependentUpon>202106250313137_CantidadCatalogoProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -249,6 +253,7 @@
     <Content Include="Views\ProductoxAlmacen\Details.cshtml" />
     <Content Include="Views\ProductoxAlmacen\Edit.cshtml" />
     <Content Include="Views\ProductoxAlmacen\Index.cshtml" />
+    <Content Include="Views\OrdenSalida\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106242248138_EstadoRequerido.resx">
       <DependentUpon>202106242248138_EstadoRequerido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106250313137_CantidadCatalogoProducto.resx">
+      <DependentUpon>202106250313137_CantidadCatalogoProducto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

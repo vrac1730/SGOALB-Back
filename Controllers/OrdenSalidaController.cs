@@ -61,11 +61,45 @@ namespace SGOALB_BACK.Controllers
                 //la alerta de los detalles cambia a pendiente
                 db.OrdenSalidas.Add(ordenSalida);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details","OrdenSalida", new { id= ordenSalida.id});
             }
 
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
+        }
+
+        // GET: OrdenSalida/Product
+        public ActionResult Product(int id) 
+        {
+            var solicitud = db.OrdenSalidas.Find(id);
+            DetalleSalida producto = new DetalleSalida();
+            producto.idOrdenSalida = id;
+
+            ViewData["idProducto"] = new SelectList(db.Productos.Where(p => p.cantidad <= p.stock_min & p.idAlerta == 4), "id", "nombre");
+
+            List<Producto> productos = db.Set<Producto>().Include(d => d.Alerta).Where(d => d.cantidad <= d.stock_min & d.idAlerta == 4).ToList();
+            ViewData["Productos"] = productos;
+
+            return View();
+        }
+        
+        // POST: OrdenSalida/Product
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Product([Bind(Include = "id,cantSolicitada,cantEntregada,idProducto,idOrdenSalida")] DetalleSalida detalleSalida)
+        {
+            if (ModelState.IsValid)
+            {
+                detalleSalida.idOrdenSalida = detalleSalida.id;
+                detalleSalida.cantEntregada = 0;
+                //la alerta de los detalles cambia a pendiente
+                db.DetalleSalidas.Add(detalleSalida);
+                db.SaveChanges();
+                return RedirectToAction("Product", "OrdenSalida", new { id = detalleSalida.idOrdenSalida });
+            }
+
+            //ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
+            return View(detalleSalida);
         }
 
         // GET: OrdenSalida/Edit/5
@@ -99,7 +133,7 @@ namespace SGOALB_BACK.Controllers
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
         }
-
+        /*
         // GET: OrdenSalida/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -124,7 +158,7 @@ namespace SGOALB_BACK.Controllers
             db.OrdenSalidas.Remove(ordenSalida);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }*/
 
         protected override void Dispose(bool disposing)
         {

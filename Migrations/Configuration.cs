@@ -79,18 +79,18 @@
             
             context.Usuarios.AddOrUpdate(x => x.id,
                 new Usuario() { id = 1, username = "Jose", correo = "jose@hotmail.com", contraseña = "123", idLocal = 1, idPersona = 1 },
-                new Usuario() { id = 2, username = "Victor", correo = "virualca@hotmail.com", contraseña = "123", idLocal = 2, idPersona = 2 },
-                new Usuario() { id = 3, username = "Marco", correo = "marco@hotmail.com", contraseña = "123", idLocal = 3, idPersona = 3 },
+                new Usuario() { id = 2, username = "Victor", correo = "virualca@hotmail.com", contraseña = "123", idLocal = 1, idPersona = 2 },
+                new Usuario() { id = 3, username = "Marco", correo = "marco@hotmail.com", contraseña = "123", idLocal = 1, idPersona = 3 },
                 new Usuario() { id = 4, username = "Cristian", correo = "cristian@hotmail.com", contraseña = "123", idLocal = 1, idPersona = 4 },
-                new Usuario() { id = 5, username = "Arnold", correo = "arnold@hotmail.com", contraseña = "123", idLocal = 2, idPersona = 5 }
+                new Usuario() { id = 5, username = "Arnold", correo = "arnold@hotmail.com", contraseña = "123", idLocal = 1, idPersona = 5 }
                 );
             context.Productos.AddOrUpdate(x => x.id,
-                new Producto() { id = 1, codigo = "111", nombre = "Cuaderno", descripcion = "Cuaderno de buena calidad", marca = "Loro", stock_min = 10, stock_max = 30, idCategoria = 1, idAlerta = 5 },
-                new Producto() { id = 2, codigo = "112", nombre = "Lapiz", descripcion = "Lapiz de buena calidad", marca = "Mongol", stock_min = 10, stock_max = 25, idCategoria = 2, idAlerta = 5 },
-                new Producto() { id = 3, codigo = "113", nombre = "Borrador", descripcion = "Borrador de buena calidad", marca = "Faber Castell", stock_min = 10, stock_max = 25, idCategoria = 3, idAlerta = 4 },
-                new Producto() { id = 4, codigo = "114", nombre = "Carro", descripcion = "Carro de buena calidad", marca = "Lego", stock_min = 5, stock_max = 15, idCategoria = 4, idAlerta = 4 },
-                new Producto() { id = 5, codigo = "115", nombre = "Hoja Bond", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 15, idCategoria = 5, idAlerta = 4 },
-                new Producto() { id = 6, codigo = "116", nombre = "Cuaderno", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 10, stock_max = 30, idCategoria = 2, idAlerta = 4 }
+                new Producto() { id = 1, codigo = "111", nombre = "Cuaderno", descripcion = "Cuaderno de buena calidad", marca = "Loro", stock_min = 10, stock_max = 30, cantidad = 6, idCategoria = 1, idAlerta = 5 },
+                new Producto() { id = 2, codigo = "112", nombre = "Lapiz", descripcion = "Lapiz de buena calidad", marca = "Mongol", stock_min = 10, stock_max = 25, cantidad = 5, idCategoria = 2, idAlerta = 5 },
+                new Producto() { id = 3, codigo = "113", nombre = "Borrador", descripcion = "Borrador de buena calidad", marca = "Faber Castell", stock_min = 10, stock_max = 25, cantidad = 10, idCategoria = 3, idAlerta = 4 },
+                new Producto() { id = 4, codigo = "114", nombre = "Carro", descripcion = "Carro de buena calidad", marca = "Lego", stock_min = 5, stock_max = 15, cantidad = 12, idCategoria = 4, idAlerta = 4 },
+                new Producto() { id = 5, codigo = "115", nombre = "Hoja Bond", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 15, cantidad = 1, idCategoria = 5, idAlerta = 4 },
+                new Producto() { id = 6, codigo = "116", nombre = "Cuaderno", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 10, stock_max = 30, cantidad = 23, idCategoria = 2, idAlerta = 4 }
                 );
 
             

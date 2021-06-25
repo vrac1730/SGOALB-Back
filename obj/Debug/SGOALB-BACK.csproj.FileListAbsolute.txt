@@ -408,4 +408,5 @@ C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ProveedorEnOrdenCompra.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB_BACK.Migrations.EstadoRequerido.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CantidadCatalogoProducto.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache

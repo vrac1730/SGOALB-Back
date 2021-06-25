@@ -31,6 +31,7 @@ namespace SGOALB_BACK.Models
 
         [DisplayName("Stock máximo")]
         public int stock_max { get; set; }
+        public int cantidad { get; set; }
 
         public int idCategoria { get; set; }      
         public int idAlerta { get; set; }
