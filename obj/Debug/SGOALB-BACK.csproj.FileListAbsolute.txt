@@ -195,9 +195,6 @@ C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-B
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CrearProducto.resources
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionProducto.resources
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CreoCategoria.resources
-C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.mOrdenCompraSalida.resources
-C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Factura.resources
-C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ModelosActualizados.resources
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.GenerateResource.cache
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CoreCompileInputs.cache
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
@@ -513,3 +510,6 @@ C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGO
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
+C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ProveedorEnOrdenCompra.resources
+C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoRequerido.resources
+C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CantidadCatalogoProducto.resources

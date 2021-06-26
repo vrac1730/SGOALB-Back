@@ -136,15 +136,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\API\DetalleCompraController.cs" />
-    <Compile Include="Controllers\API\DetalleSolicitudController.cs" />
-    <Compile Include="Controllers\API\OrdenCompraController.cs" />
-    <Compile Include="Controllers\API\ProductoController.cs" />
-    <Compile Include="Controllers\API\SolicitudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\OrdenCompraController.cs" />
     <Compile Include="Controllers\OrdenSalidaController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProductoxAlmacenController.cs" />
+    <Compile Include="Controllers\ProveedorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,18 +231,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Almacen\Create.cshtml" />
-    <Content Include="Views\Almacen\Delete.cshtml" />
-    <Content Include="Views\Almacen\Details.cshtml" />
-    <Content Include="Views\Almacen\Edit.cshtml" />
-    <Content Include="Views\Almacen\Index.cshtml" />
     <Content Include="Views\OrdenCompra\Create.cshtml" />
     <Content Include="Views\OrdenCompra\Delete.cshtml" />
     <Content Include="Views\OrdenCompra\Details.cshtml" />
     <Content Include="Views\OrdenCompra\Edit.cshtml" />
     <Content Include="Views\OrdenCompra\Index.cshtml" />
     <Content Include="Views\OrdenSalida\Create.cshtml" />
-    <Content Include="Views\OrdenSalida\Delete.cshtml" />
     <Content Include="Views\OrdenSalida\Details.cshtml" />
     <Content Include="Views\OrdenSalida\Edit.cshtml" />
     <Content Include="Views\OrdenSalida\Index.cshtml" />
@@ -254,6 +246,20 @@
     <Content Include="Views\ProductoxAlmacen\Edit.cshtml" />
     <Content Include="Views\ProductoxAlmacen\Index.cshtml" />
     <Content Include="Views\OrdenSalida\Product.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\Edit.cshtml" />
+    <Content Include="Views\Producto\Details.cshtml" />
+    <Content Include="Views\Producto\Create.cshtml" />
+    <Content Include="Views\Local\Create.cshtml" />
+    <Content Include="Views\Local\Delete.cshtml" />
+    <Content Include="Views\Local\Details.cshtml" />
+    <Content Include="Views\Local\Edit.cshtml" />
+    <Content Include="Views\Local\Index.cshtml" />
+    <Content Include="Views\Proveedor\Create.cshtml" />
+    <Content Include="Views\Proveedor\Delete.cshtml" />
+    <Content Include="Views\Proveedor\Details.cshtml" />
+    <Content Include="Views\Proveedor\Edit.cshtml" />
+    <Content Include="Views\Proveedor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
