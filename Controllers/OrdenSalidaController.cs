@@ -42,6 +42,14 @@ namespace SGOALB_BACK.Controllers
         public ActionResult Create()
         {
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username");
+
+            var prod = db.Productos.Where(p => p.cantidad <= p.stock_min & p.idAlerta == 4);
+
+            ViewData["idProducto"] = new SelectList(prod, "id", "nombre");            
+
+            List<Producto> productos = prod.Include(d => d.Alerta).ToList();
+            ViewData["Productos"] = productos;
+
             return View();
         }
 
@@ -50,57 +58,29 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,fecha,codigo,estado,idUsuario")] OrdenSalida ordenSalida)
+        public ActionResult Create([Bind(Include = "id,fecha,codigo,estado,idUsuario,DetalleSalida")] OrdenSalida ordenSalida)
         {
             if (ModelState.IsValid)
             {
                 ordenSalida.estado = "Pendiente";
-                var os = db.OrdenSalidas.OrderByDescending(o => o.id).FirstOrDefault(o => o.estado == ordenSalida.estado);
+                var os = db.OrdenSalidas.OrderByDescending(o => o.id).FirstOrDefault(o => o.estado == "Pendiente");
                 int id = os.id + 1;
                 ordenSalida.codigo = "000"+id;
-                //la alerta de los detalles cambia a pendiente
                 db.OrdenSalidas.Add(ordenSalida);
                 db.SaveChanges();
-                return RedirectToAction("Details","OrdenSalida", new { id= ordenSalida.id});
+                
+                foreach (var item in ordenSalida.DetalleSalida)
+                {
+                    var prod = db.Productos.Find(item.idProducto);
+                    prod.idAlerta = 5;
+                }
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
             return View(ordenSalida);
-        }
-
-        // GET: OrdenSalida/Product
-        public ActionResult Product(int id) 
-        {
-            var solicitud = db.OrdenSalidas.Find(id);
-            DetalleSalida producto = new DetalleSalida();
-            producto.idOrdenSalida = id;
-
-            ViewData["idProducto"] = new SelectList(db.Productos.Where(p => p.cantidad <= p.stock_min & p.idAlerta == 4), "id", "nombre");
-
-            List<Producto> productos = db.Set<Producto>().Include(d => d.Alerta).Where(d => d.cantidad <= d.stock_min & d.idAlerta == 4).ToList();
-            ViewData["Productos"] = productos;
-
-            return View();
-        }
-        
-        // POST: OrdenSalida/Product
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Product([Bind(Include = "id,cantSolicitada,cantEntregada,idProducto,idOrdenSalida")] DetalleSalida detalleSalida)
-        {
-            if (ModelState.IsValid)
-            {
-                detalleSalida.idOrdenSalida = detalleSalida.id;
-                detalleSalida.cantEntregada = 0;
-                //la alerta de los detalles cambia a pendiente
-                db.DetalleSalidas.Add(detalleSalida);
-                db.SaveChanges();
-                return RedirectToAction("Product", "OrdenSalida", new { id = detalleSalida.idOrdenSalida });
-            }
-
-            //ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
-            return View(detalleSalida);
-        }
+        }       
 
         // GET: OrdenSalida/Edit/5
         public ActionResult Edit(int? id)

@@ -22,8 +22,8 @@ namespace SGOALB_BACK.Models
         public int idOrdenSalida { get; set; }
 
         [ForeignKey("idOrdenSalida")]
-        public virtual OrdenSalida OrdenSalida { get; set; }
+        public OrdenSalida OrdenSalida { get; set; }
         [ForeignKey("idProducto")]
-        public virtual Producto Producto { get; set; }        
+        public Producto Producto { get; set; }        
     }
 }
