@@ -123,48 +123,20 @@ namespace SGOALB_BACK.Controllers
         public ActionResult EditDetail([Bind(Include = "id,cantEntregada,idProducto")] DetalleSalida detalleSalida)
         {
             if (ModelState.IsValid)
-            {
-                var detalle = db.DetalleSalidas.Find(detalleSalida.id);
-                detalle.cantEntregada = detalleSalida.cantEntregada;
-
+            {              
                 var prod = db.Productos.Find(detalleSalida.idProducto);
-                prod.idAlerta = 6;
-
+                var detalle = db.DetalleSalidas.Find(detalleSalida.id);
                 var alm = db.ProductosxAlmacen.FirstOrDefault(a => a.idProducto == detalleSalida.idProducto);
-                alm.cantidad = alm.cantidad - detalleSalida.cantEntregada;
-                //reducir stock de almacen
+
+                prod.idAlerta = 6;          
+                alm.cantidad -= (detalleSalida.cantEntregada-detalle.cantEntregada);                
+                detalle.cantEntregada = detalleSalida.cantEntregada;
                 //mostrar existencias en almacen
                 db.SaveChanges();
                 return RedirectToAction("Details", new { id = detalle.idOrdenSalida });
             }
             return View(detalleSalida);
-        }
-        /*
-        // GET: OrdenSalida/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OrdenSalida ordenSalida = db.OrdenSalidas.Find(id);
-            if (ordenSalida == null)
-            {
-                return HttpNotFound();
-            }
-            return View(ordenSalida);
-        }
-
-        // POST: OrdenSalida/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            OrdenSalida ordenSalida = db.OrdenSalidas.Find(id);
-            db.OrdenSalidas.Remove(ordenSalida);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }*/
+        }        
 
         protected override void Dispose(bool disposing)
         {

@@ -54,6 +54,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Código</th>
                     <th>Producto</th>
                     <th>Marca</th>
                     <th>Solicitado</th>
@@ -66,6 +67,9 @@
                 @foreach (var item in ViewData["Productos"] as IEnumerable<SGOALB_BACK.Models.DetalleSalida>)
                 {
                     <tr>
+                        <td>
+                            @item.Producto.codigo
+                        </td>
                         <td>
                             @item.Producto.nombre
                         </td>
