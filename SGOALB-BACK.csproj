@@ -242,7 +242,7 @@
     <Content Include="Views\OrdenCompra\Index.cshtml" />
     <Content Include="Views\OrdenSalida\Create.cshtml" />
     <Content Include="Views\OrdenSalida\Details.cshtml" />
-    <Content Include="Views\OrdenSalida\Edit.cshtml" />
+    <Content Include="Views\OrdenSalida\EditDetail.cshtml" />
     <Content Include="Views\OrdenSalida\Index.cshtml" />
     <Content Include="Views\ProductoxAlmacen\Create.cshtml" />
     <Content Include="Views\ProductoxAlmacen\Delete.cshtml" />

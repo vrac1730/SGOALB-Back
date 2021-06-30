@@ -15,6 +15,7 @@ namespace SGOALB_BACK.Models
         public int id{ get; set; }        
         [DisplayName("Cantidad Requerida")]
         public int cantSolicitada { get; set; }
+        [DisplayName("Cantidad Entregada"), RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten  positivos.")]
         public int cantEntregada { get; set; }
         public string observacion { get; set; }
         [DisplayName("Producto")]

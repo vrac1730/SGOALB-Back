@@ -97,18 +97,22 @@ namespace SGOALB_BACK.Controllers
         }       
 
         // GET: OrdenSalida/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult EditDetail(int? id)
         {
             if (id == null)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); 
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            OrdenSalida ordenSalida = db.OrdenSalidas.Find(id);
+            DetalleSalida detalleSalida = db.DetalleSalidas.Find(id);
 
-            if (ordenSalida == null)
+            if (detalleSalida == null)
                 return HttpNotFound();
-            
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
-            return View(ordenSalida);
+
+            var prod = db.Productos.Include(p => p.Alerta).FirstOrDefault(p => p.id == detalleSalida.idProducto);
+            detalleSalida.Producto = prod;
+
+            var alm = db.ProductosxAlmacen.FirstOrDefault(a => a.Producto.id == detalleSalida.idProducto);
+
+            return View(detalleSalida);
         }
 
         // POST: OrdenSalida/Edit/5
@@ -116,16 +120,24 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,fecha,codigo,estado,idUsuario")] OrdenSalida ordenSalida)
+        public ActionResult EditDetail([Bind(Include = "id,cantEntregada,idProducto")] DetalleSalida detalleSalida)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ordenSalida).State = EntityState.Modified;
+                var detalle = db.DetalleSalidas.Find(detalleSalida.id);
+                detalle.cantEntregada = detalleSalida.cantEntregada;
+
+                var prod = db.Productos.Find(detalleSalida.idProducto);
+                prod.idAlerta = 6;
+
+                var alm = db.ProductosxAlmacen.FirstOrDefault(a => a.idProducto == detalleSalida.idProducto);
+                alm.cantidad = alm.cantidad - detalleSalida.cantEntregada;
+                //reducir stock de almacen
+                //mostrar existencias en almacen
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = detalle.idOrdenSalida });
             }
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
-            return View(ordenSalida);
+            return View(detalleSalida);
         }
         /*
         // GET: OrdenSalida/Delete/5

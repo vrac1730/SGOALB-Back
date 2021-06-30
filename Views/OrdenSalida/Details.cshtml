@@ -59,6 +59,7 @@
                     <th>Solicitado</th>
                     <th>Entregado</th>
                     <th>Observación</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,6 +80,9 @@
                         </td>
                         <td>
                             @item.Producto.Alerta.nombre
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "EditDetail", new { id = item.id })
                         </td>
                     </tr>
                 }
