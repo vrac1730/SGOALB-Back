@@ -60,8 +60,17 @@ namespace SGOALB_BACK.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,fecha,codigo,estado,idUsuario,DetalleSalida")] OrdenSalida ordenSalida)
         {
+          
             if (ModelState.IsValid)
-            {
+            {/*
+                if (ordenSalida.DetalleSalida == null)
+                {
+                    ViewData["idProducto"] = new SelectList(pro, "id", "nombre");
+                    ViewData["Productos"] = productos;
+                    ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
+                    return View();
+                }*/
+                ordenSalida.fecha = DateTime.Now;
                 ordenSalida.estado = "Pendiente";
                 var os = db.OrdenSalidas.OrderByDescending(o => o.id).FirstOrDefault(o => o.estado == "Pendiente");
                 int id = os.id + 1;
@@ -78,8 +87,13 @@ namespace SGOALB_BACK.Controllers
                 return RedirectToAction("Index");
             }
 
+            var pro = db.Productos.Where(p => p.cantidad <= p.stock_min & p.idAlerta == 4);
+            List<Producto> productos = pro.Include(d => d.Alerta).ToList();
+            ViewData["idProducto"] = new SelectList(pro, "id", "nombre");
+            ViewData["Productos"] = productos;
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenSalida.idUsuario);
-            return View(ordenSalida);
+
+            return View();
         }       
 
         // GET: OrdenSalida/Edit/5

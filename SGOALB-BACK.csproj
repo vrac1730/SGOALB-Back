@@ -170,6 +170,10 @@
     <Compile Include="Migrations\202106250313137_CantidadCatalogoProducto.Designer.cs">
       <DependentUpon>202106250313137_CantidadCatalogoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106300224117_EstadoNoRequerido.cs" />
+    <Compile Include="Migrations\202106300224117_EstadoNoRequerido.Designer.cs">
+      <DependentUpon>202106300224117_EstadoNoRequerido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -294,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106250313137_CantidadCatalogoProducto.resx">
       <DependentUpon>202106250313137_CantidadCatalogoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106300224117_EstadoNoRequerido.resx">
+      <DependentUpon>202106300224117_EstadoNoRequerido.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,13 +17,13 @@ namespace SGOALB_BACK.Models
         public string codigo { get; set; }
         [Column(TypeName = "datetime2"), DisplayName("Fecha")]
         public DateTime fecha { get; set; }        
-        [DisplayName("Estado"), Required]
+        [DisplayName("Estado")]
         public string estado { get; set; }
         [DisplayName("Encargado")]
         public int idUsuario { get; set; }
 
         [ForeignKey("idUsuario")]
-        public virtual Usuario Usuario { get; set; }
+        public Usuario Usuario { get; set; }
 
         public List<DetalleSalida> DetalleSalida { get; set; }
     }

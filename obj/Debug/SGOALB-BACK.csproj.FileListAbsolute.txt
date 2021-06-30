@@ -513,3 +513,4 @@ C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_B
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoRequerido.resources
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CantidadCatalogoProducto.resources
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB_BACK.Migrations.EstadoNoRequerido.resources
