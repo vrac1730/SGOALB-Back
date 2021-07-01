@@ -16,7 +16,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Usuario.username, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-3">
             @Html.DropDownList("idUsuario", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Usuario.username, "", new { @class = "text-danger" })
         </div>
@@ -24,24 +24,35 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Proveedor.nombre, "Proveedor", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-3">
             @Html.DropDownList("idProveedor", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Proveedor.nombre, "", new { @class = "text-danger" })
         </div>
+
+        <label class="control-label col-md-2">Cantidad</label>
+        <div class="col-md-3">
+            <input type="text" id="cantidad" class="form-control" />
+        </div>
+
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.fechaOrden, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBox("fechaOrden", DateTime.Today.ToString("yyyy-MM-dd"), new { @class = "form-control" })
+        <div class="col-md-3">
+            @Html.TextBox("fechaOrden", DateTime.Today.ToString("yyyy-MM-dd"), new { @class = "form-control", @disabled = "disabled" })
             @Html.ValidationMessageFor(model => model.fechaOrden, "", new { @class = "text-danger" })
         </div>
+
+         <label class="control-label col-md-2">Precio Total</label>
+         <div class="col-md-3">
+                <input type="text" id="total" class="form-control" />
+         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.fechaPago, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.fechaPago, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="col-md-3">
+            @Html.TextBox("fechaPago", null , new { @class = "form-control"})
             @Html.ValidationMessageFor(model => model.fechaPago, "", new { @class = "text-danger" })
         </div>
     </div>

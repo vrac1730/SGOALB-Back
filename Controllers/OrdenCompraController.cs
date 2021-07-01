@@ -41,6 +41,11 @@ namespace SGOALB_BACK.Controllers
         {
             ViewBag.idProveedor = new SelectList(db.Proveedores, "id", "nombre");
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username");
+
+            ViewBag.idProducto = new SelectList(db.Productos, "id", "nombre");
+
+
+
             return View();
         }
 
@@ -53,6 +58,8 @@ namespace SGOALB_BACK.Controllers
         {
             if (ModelState.IsValid)
             {
+                ordenCompra.fechaOrden = DateTime.Now;
+
                 ordenCompra.montoTotal = 0;
                 var os = db.OrdenCompras.OrderByDescending(o => o.id).FirstOrDefault(o => o.montoTotal == ordenCompra.montoTotal);
                 int id = os.id + 1;
@@ -79,7 +86,7 @@ namespace SGOALB_BACK.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenCompra.idUsuario);
+            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenCompra.idUsuario);
             return View(ordenCompra);
         }
 
