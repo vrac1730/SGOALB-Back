@@ -48,6 +48,8 @@ namespace SGOALB_BACK.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre,direccion,telefono,ruc,razon_social")] Local local)
         {
+
+
             if (ModelState.IsValid)
             {
                 db.Locales.Add(local);
@@ -78,7 +80,7 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,direccion,telefono,ruc,razon_social")] Local local)
+        public ActionResult Edit([Bind(Include = "id,nombre,direccion,telefono")] Local local)
         {
             if (ModelState.IsValid)
             {
@@ -87,32 +89,6 @@ namespace SGOALB_BACK.Controllers
                 return RedirectToAction("Index");
             }
             return View(local);
-        }
-
-        // GET: Locals/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Local local = db.Locales.Find(id);
-            if (local == null)
-            {
-                return HttpNotFound();
-            }
-            return View(local);
-        }
-
-        // POST: Locals/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Local local = db.Locales.Find(id);
-            db.Locales.Remove(local);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

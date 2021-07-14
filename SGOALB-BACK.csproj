@@ -178,6 +178,10 @@
     <Compile Include="Migrations\202107011858563_DetalleCompraRelacion.Designer.cs">
       <DependentUpon>202107011858563_DetalleCompraRelacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107070133576_modelo-producto-proveedor-local.cs" />
+    <Compile Include="Migrations\202107070133576_modelo-producto-proveedor-local.Designer.cs">
+      <DependentUpon>202107070133576_modelo-producto-proveedor-local.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -258,12 +262,10 @@
     <Content Include="Views\Producto\Details.cshtml" />
     <Content Include="Views\Producto\Create.cshtml" />
     <Content Include="Views\Local\Create.cshtml" />
-    <Content Include="Views\Local\Delete.cshtml" />
     <Content Include="Views\Local\Details.cshtml" />
     <Content Include="Views\Local\Edit.cshtml" />
     <Content Include="Views\Local\Index.cshtml" />
     <Content Include="Views\Proveedor\Create.cshtml" />
-    <Content Include="Views\Proveedor\Delete.cshtml" />
     <Content Include="Views\Proveedor\Details.cshtml" />
     <Content Include="Views\Proveedor\Edit.cshtml" />
     <Content Include="Views\Proveedor\Index.cshtml" />
@@ -308,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011858563_DetalleCompraRelacion.resx">
       <DependentUpon>202107011858563_DetalleCompraRelacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070133576_modelo-producto-proveedor-local.resx">
+      <DependentUpon>202107070133576_modelo-producto-proveedor-local.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
