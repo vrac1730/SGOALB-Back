@@ -48,8 +48,6 @@ namespace SGOALB_BACK.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre,direccion,telefono,ruc,razon_social")] Local local)
         {
-
-
             if (ModelState.IsValid)
             {
                 db.Locales.Add(local);
@@ -80,7 +78,7 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,direccion,telefono")] Local local)
+        public ActionResult Edit([Bind(Include = "id,nombre,direccion,telefono,ruc,razon_social")] Local local)
         {
             if (ModelState.IsValid)
             {

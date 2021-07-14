@@ -14,8 +14,7 @@ namespace SGOALB_BACK.Models
         [Key]
         public int id { get; set; }
 
-        [DisplayName("Código")]
-        [Required]
+        [DisplayName("Código")]        
         public string codigo { get; set; }
 
         [DisplayName("Nombre")]
@@ -32,13 +31,13 @@ namespace SGOALB_BACK.Models
         public string marca { get; set; }
 
         [DisplayName("Stock mínimo")]
-        [Range(00000, 9999, ErrorMessage = "Valor positivo")]
+        [Range(000, 25, ErrorMessage = "Valor positivo, no mayor a 25")]
         public int stock_min { get; set; }
 
         [DisplayName("Stock máximo")]
+        [Range(0000, 1000, ErrorMessage = "Valor positivo, no mayor a 1000")]
         public int stock_max { get; set; }
         [DisplayName("Cantidad")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten números.")]
         public int cantidad { get; set; }
         [DisplayName("Categoría")]
         public int idCategoria { get; set; }

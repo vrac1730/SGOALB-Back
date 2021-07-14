@@ -61,7 +61,6 @@ namespace SGOALB_BACK.Controllers
         // GET: Producto/Create
         public ActionResult Create()
         {
-            ViewBag.idAlerta = new SelectList(db.Alertas, "id", "nombre");
             ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombre");
             return View();
         }
@@ -71,16 +70,22 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,codigo,nombre,descripcion,marca,stock_min,stock_max,idCategoria,idAlerta")] Producto producto)
+        public ActionResult Create([Bind(Include = "id,nombre,descripcion,marca,stock_min,stock_max,idCategoria")] Producto producto)
         {
             if (ModelState.IsValid)
             {
+                producto.cantidad = 0;
+                producto.idAlerta = 4;
+
                 db.Productos.Add(producto);
+                db.SaveChanges();
+
+                var prodcod = db.Productos.Find(producto.id);
+                prodcod.codigo = ""+producto.id+producto.idCategoria+producto.idAlerta;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idAlerta = new SelectList(db.Alertas, "id", "nombre", producto.idAlerta);
             ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombre", producto.idCategoria);
             return View(producto);
         }
@@ -97,7 +102,6 @@ namespace SGOALB_BACK.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idAlerta = new SelectList(db.Alertas, "id", "nombre", producto.idAlerta);
             ViewBag.idCategoria = new SelectList(db.Categorias, "id", "nombre", producto.idCategoria);
             return View(producto);
         }
@@ -107,7 +111,7 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,codigo,nombre,descripcion,marca,stock_min,stock_max,idCategoria,idAlerta")] Producto producto)
+        public ActionResult Edit([Bind(Include = "id,codigo,nombre,descripcion,marca,stock_min,stock_max,cantidad,idCategoria,idAlerta")] Producto producto)
         {
             if (ModelState.IsValid)
             {

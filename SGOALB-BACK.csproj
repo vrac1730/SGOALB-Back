@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202107070133576_modelo-producto-proveedor-local.Designer.cs">
       <DependentUpon>202107070133576_modelo-producto-proveedor-local.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107140610283_CodigoNulo.cs" />
+    <Compile Include="Migrations\202107140610283_CodigoNulo.Designer.cs">
+      <DependentUpon>202107140610283_CodigoNulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -313,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107070133576_modelo-producto-proveedor-local.resx">
       <DependentUpon>202107070133576_modelo-producto-proveedor-local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107140610283_CodigoNulo.resx">
+      <DependentUpon>202107140610283_CodigoNulo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

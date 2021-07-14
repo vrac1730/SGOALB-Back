@@ -19,7 +19,7 @@ namespace SGOALB_BACK.Models
         public string nombre { get; set; }
         [Required]
         [DisplayName("Dirección")]
-        [StringLength(30)]
+        [StringLength(30,ErrorMessage = "Dirección no debe superar los 30 caracteres.")]
         public string direccion { get; set; }
         [DisplayName("Teléfono")]
         [Range(100000000, 999999999, ErrorMessage = "Campo valido de 9 digitos")]

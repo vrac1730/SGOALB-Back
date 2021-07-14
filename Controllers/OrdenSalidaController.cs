@@ -15,10 +15,20 @@ namespace SGOALB_BACK.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: OrdenSalida
-        public ActionResult Index()
-        {   //busqueda por rango de fechas, estado            
-            var ordenSalidas = db.OrdenSalidas.Include(o => o.Usuario.Local).Include(o=> o.Usuario.Persona).ToList();
-            return View(ordenSalidas);
+        public ActionResult Index(string cod)
+        {   //busqueda por rango de fechas, estado          
+            var result = db.OrdenSalidas.Include(p => p.Usuario.Persona).Include(p => p.Usuario.Local);
+            if (String.IsNullOrWhiteSpace(cod))
+            {
+                return View(result);
+            }
+
+            else if (cod.Length > 0)
+            {
+                return View(result.Where(p => p.codigo == cod));
+            } 
+
+            return View(result);
         }
 
         // GET: OrdenSalida/Details/5
@@ -110,7 +120,7 @@ namespace SGOALB_BACK.Controllers
             var prod = db.Productos.Include(p => p.Alerta).FirstOrDefault(p => p.id == detalleSalida.idProducto);
             detalleSalida.Producto = prod;
 
-            var alm = db.ProductosxAlmacen.FirstOrDefault(a => a.Producto.id == detalleSalida.idProducto);
+            //var alm = db.ProductosxAlmacen.FirstOrDefault(a => a.Producto.id == detalleSalida.idProducto);
 
             return View(detalleSalida);
         }
@@ -129,6 +139,7 @@ namespace SGOALB_BACK.Controllers
                 var alm = db.ProductosxAlmacen.FirstOrDefault(a => a.idProducto == detalleSalida.idProducto);
 
                 prod.idAlerta = 6;          
+                prod.cantidad += (detalleSalida.cantEntregada - detalle.cantEntregada);
                 alm.cantidad -= (detalleSalida.cantEntregada-detalle.cantEntregada);                
                 detalle.cantEntregada = detalleSalida.cantEntregada;
                 //mostrar existencias en almacen

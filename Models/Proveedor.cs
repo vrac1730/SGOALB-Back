@@ -28,7 +28,7 @@ namespace SGOALB_BACK.Models
         [Range(000000000, 999999999, ErrorMessage = "Campo valido de 9 digitos")]
         [DisplayName("Teléfono")]
         public long telefono { get; set; }
-        [Range(000000000, 999999999, ErrorMessage = "Campo valido de 9 digitos")]
+        [Range(10000000000, 99999999999, ErrorMessage = "Campo valido de 11 digitos")]
         [RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten números.")]
         [DisplayName("RUC")]
         public long ruc { get; set; }
