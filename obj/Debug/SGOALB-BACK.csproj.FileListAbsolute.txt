@@ -471,7 +471,6 @@ C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGO
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ProveedorEnOrdenCompra.resources
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoRequerido.resources
 C:\Users\Angie\Desktop\2021-1\tp3\seman7\proyecto\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CantidadCatalogoProducto.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB-BACK.csprojAssemblyReference.cache
 C:\Users\Usuario\Downloads\TP V\SGOALB-BACK\obj\Debug\SGOALB_BACK.Migrations.EstadoNoRequerido.resources
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoNoRequerido.resources
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.DetalleCompraRelacion.resources
@@ -625,3 +624,4 @@ C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\roslyn\vbc.rsp
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\roslyn\VBCSCompiler.exe
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CodigoNulo.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Cotizaciondetalle.resources

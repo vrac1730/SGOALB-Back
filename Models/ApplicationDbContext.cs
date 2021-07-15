@@ -15,6 +15,7 @@ namespace SGOALB_BACK.Models
         public DbSet<OrdenSalida> OrdenSalidas { get; set; }
         public DbSet<DetalleSalida> DetalleSalidas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<DetalleCotizacion> DetalleCotizaciones { get; set; }
         public DbSet<Cotizacion> Cotizaciones { get; set; }
         public DbSet<Local> Locales { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
@@ -32,7 +33,7 @@ namespace SGOALB_BACK.Models
         {
             modelBuilder.Entity<UsuarioxRol>().HasKey(x => new { x.idUsuario, x.idRol });
             modelBuilder.Entity<RolxPermiso>().HasKey(x => new { x.idRol, x.idPermiso });
-            modelBuilder.Entity<Cotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });   
+            modelBuilder.Entity<DetalleCotizacion>().HasKey(x => new { x.idProducto, x.idProveedor });   
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -142,7 +142,8 @@ namespace SGOALB_BACK.Controllers
                 prod.cantidad += (detalleSalida.cantEntregada - detalle.cantEntregada);
                 alm.cantidad -= (detalleSalida.cantEntregada-detalle.cantEntregada);                
                 detalle.cantEntregada = detalleSalida.cantEntregada;
-                //mostrar existencias en almacen
+                //validar existencias en almacen
+                //cambiar alerta de prodxalmacen
                 db.SaveChanges();
                 return RedirectToAction("Details", new { id = detalle.idOrdenSalida });
             }

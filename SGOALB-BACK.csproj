@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202107140610283_CodigoNulo.Designer.cs">
       <DependentUpon>202107140610283_CodigoNulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107150244583_Cotizacion-detalle.cs" />
+    <Compile Include="Migrations\202107150244583_Cotizacion-detalle.Designer.cs">
+      <DependentUpon>202107150244583_Cotizacion-detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -193,6 +197,7 @@
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Cotizacion.cs" />
     <Compile Include="Models\DetalleCompra.cs" />
+    <Compile Include="Models\DetalleCotizacion.cs" />
     <Compile Include="Models\DetalleFactura.cs" />
     <Compile Include="Models\DetalleSalida.cs" />
     <Compile Include="Models\Estado.cs" />
@@ -248,7 +253,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\OrdenCompra\Create.cshtml" />
-    <Content Include="Views\OrdenCompra\Delete.cshtml" />
     <Content Include="Views\OrdenCompra\Details.cshtml" />
     <Content Include="Views\OrdenCompra\Edit.cshtml" />
     <Content Include="Views\OrdenCompra\Index.cshtml" />
@@ -320,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107140610283_CodigoNulo.resx">
       <DependentUpon>202107140610283_CodigoNulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107150244583_Cotizacion-detalle.resx">
+      <DependentUpon>202107150244583_Cotizacion-detalle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

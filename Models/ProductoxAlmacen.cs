@@ -19,12 +19,15 @@ namespace SGOALB_BACK.Models
         public DateTime fecha_salida { get; set; }
         public int idProducto { get; set; }
         public int idEstado { get; set; }
+        public int idAlerta { get; set; }
         public int idAlmacen { get; set; }
 
         [ForeignKey("idProducto")]
         public Producto Producto { get; set; }
         [ForeignKey("idEstado")]
         public Estado Estado { get; set; }
+        [ForeignKey("idAlerta")]
+        public Alerta Alerta { get; set; }
         [ForeignKey("idAlmacen")]
         public Almacen Almacen { get; set; }
     }

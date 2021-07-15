@@ -13,15 +13,19 @@ namespace SGOALB_BACK.Models
         [Key]
         public int id { get; set; }
         public int cantidad { get; set; }
+        public int cantidadRecibida { get; set; }
         public double total { get; set; }
         public int idOrdenCompra { get; set; }
         public int idProducto { get; set; }
         public int idProveedor { get; set; }
 
         [ForeignKey("idOrdenCompra")]
-        public virtual OrdenCompra OrdenCompra { get; set; }
+        public OrdenCompra OrdenCompra { get; set; }
+        //[ForeignKey("idProveedor")]
+        //public Proveedor Proveedor { get; set; }
+        //[ForeignKey("idProducto")]
+        //public Producto Producto { get; set; }
         [ForeignKey("idProducto, idProveedor")]
-        public virtual Cotizacion Cotizacion { get; set; }
-        public Producto Producto { get; set; }
+        public DetalleCotizacion DetalleCotizacion { get; set; }
     }
 }

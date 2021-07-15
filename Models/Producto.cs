@@ -19,7 +19,7 @@ namespace SGOALB_BACK.Models
 
         [DisplayName("Nombre")]
         [Required]
-        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "* Solo se permiten letras.")]
+        [RegularExpression("^[a-zA-Z]+( [a-zA-Z]+)*$", ErrorMessage = "* Solo se permiten letras.")]
         public string nombre { get; set; }
 
         [DisplayName("Descripción")]
@@ -49,7 +49,6 @@ namespace SGOALB_BACK.Models
         [ForeignKey("idAlerta")]
         public Alerta Alerta { get; set; }
        
-        //public List<DetalleSalida> DetalleSalida { get; set; }
-        public List<Cotizacion> Cotizacion { get; set; }
+        public List<DetalleCotizacion> DetalleCotizacion { get; set; }
     }
 }

@@ -107,32 +107,6 @@ namespace SGOALB_BACK.Controllers
             return View(ordenCompra);
         }
 
-        // GET: OrdenCompra/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OrdenCompra ordenCompra = db.OrdenCompras.Find(id);
-            if (ordenCompra == null)
-            {
-                return HttpNotFound();
-            }
-            return View(ordenCompra);
-        }
-
-        // POST: OrdenCompra/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            OrdenCompra ordenCompra = db.OrdenCompras.Find(id);
-            db.OrdenCompras.Remove(ordenCompra);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
