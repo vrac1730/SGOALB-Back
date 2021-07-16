@@ -111,9 +111,9 @@
                 new OrdenSalida() { id = 5, codigo = "0005", fecha = new DateTime(2021, 06, 03, 12, 19, 20), estado = "Pendiente", idUsuario = 5 }
                 );
             context.OrdenCompras.AddOrUpdate(x => x.id,
-                new OrdenCompra() { id = 1, codigo = "0001", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1500, idUsuario = 1, idProveedor = 1 },
+                new OrdenCompra() { id = 1, codigo = "0001", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1500, idUsuario = 1, idProveedor = 3 },
                 new OrdenCompra() { id = 2, codigo = "0002", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 500, idUsuario = 2, idProveedor = 2 },
-                new OrdenCompra() { id = 3, codigo = "0003", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1200, idUsuario = 3, idProveedor = 3 },
+                new OrdenCompra() { id = 3, codigo = "0003", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1200, idUsuario = 3, idProveedor = 1 },
                 new OrdenCompra() { id = 4, codigo = "0004", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1000, idUsuario = 4, idProveedor = 4 },
                 new OrdenCompra() { id = 5, codigo = "0005", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 000, idUsuario = 5, idProveedor = 5 }
                 );
@@ -137,8 +137,8 @@
                 new DetalleSalida() { idOrdenSalida = 1, idProducto = 2, cantSolicitada = 10, cantEntregada = 0, observacion = "" }
                 );
             context.DetalleCompras.AddOrUpdate(x => x.id,
-                new DetalleCompra() { id = 1, cantidad = 20, total = 410, cantidadRecibida = 0, idProducto = 5, idProveedor = 3, idOrdenCompra = 1 },
-                new DetalleCompra() { id = 2, cantidad = 20, total = 470, cantidadRecibida = 0, idProducto = 6, idProveedor = 3, idOrdenCompra = 1 }
+                new DetalleCompra() { id = 1, cantidad = 20, total = 410, cantidadRecibida = 0, idProducto = 5, idOrdenCompra = 1 },
+                new DetalleCompra() { id = 2, cantidad = 20, total = 470, cantidadRecibida = 0, idProducto = 6, idOrdenCompra = 1 }
                 );
         }
     }

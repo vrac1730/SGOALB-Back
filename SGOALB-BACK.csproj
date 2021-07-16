@@ -136,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CotizacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\OrdenCompraController.cs" />
@@ -189,6 +190,10 @@
     <Compile Include="Migrations\202107150244583_Cotizacion-detalle.cs" />
     <Compile Include="Migrations\202107150244583_Cotizacion-detalle.Designer.cs">
       <DependentUpon>202107150244583_Cotizacion-detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107150654371_CorrecionDetalleCompra.cs" />
+    <Compile Include="Migrations\202107150654371_CorrecionDetalleCompra.Designer.cs">
+      <DependentUpon>202107150654371_CorrecionDetalleCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
@@ -254,7 +259,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\OrdenCompra\Create.cshtml" />
     <Content Include="Views\OrdenCompra\Details.cshtml" />
-    <Content Include="Views\OrdenCompra\Edit.cshtml" />
     <Content Include="Views\OrdenCompra\Index.cshtml" />
     <Content Include="Views\OrdenSalida\Create.cshtml" />
     <Content Include="Views\OrdenSalida\Details.cshtml" />
@@ -277,6 +281,10 @@
     <Content Include="Views\Proveedor\Details.cshtml" />
     <Content Include="Views\Proveedor\Edit.cshtml" />
     <Content Include="Views\Proveedor\Index.cshtml" />
+    <Content Include="Views\OrdenCompra\EditDetail.cshtml" />
+    <Content Include="Views\Cotizacion\Index.cshtml" />
+    <Content Include="Views\Cotizacion\Create.cshtml" />
+    <Content Include="Views\Cotizacion\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107150244583_Cotizacion-detalle.resx">
       <DependentUpon>202107150244583_Cotizacion-detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107150654371_CorrecionDetalleCompra.resx">
+      <DependentUpon>202107150654371_CorrecionDetalleCompra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

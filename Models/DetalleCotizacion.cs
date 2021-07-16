@@ -18,7 +18,7 @@ namespace SGOALB_BACK.Models
         [ForeignKey("idProducto")]
         public virtual Producto Producto { get; set; }
         [ForeignKey("idProveedor")]
-        public virtual Proveedor Proveedor { get; set; }
+        public Proveedor Proveedor { get; set; }
         [ForeignKey("idCotizacion")]
         public Cotizacion Cotizacion { get; set; }
         [ForeignKey("idAlerta")]

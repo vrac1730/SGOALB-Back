@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.codigo)
         </th>
         <th>
+            Encargado
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Usuario.Local.nombre)
         </th>
         <th>
@@ -38,9 +41,12 @@
             @Html.DisplayFor(modelItem => item.codigo)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Usuario.username)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Usuario.Local.nombre)
         </td>
-                <td>
+        <td>
             @Html.DisplayFor(modelItem => item.Proveedor.nombre)
         </td>
         <td>
