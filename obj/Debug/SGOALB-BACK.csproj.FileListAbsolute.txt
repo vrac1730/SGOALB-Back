@@ -304,7 +304,6 @@ C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.csp
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\Newtonsoft.Json.dll
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\bin\SGOALB-BACK.dll.config
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\bin\SGOALB-BACK.dll
 C:\Users\marco\Documents\UNIVERSIDAD\TP IV\BACK PROGRA\SGOALB-Back\bin\SGOALB-BACK.pdb
@@ -519,6 +518,20 @@ C:\Users\Angie\Desktop\2021-1\tp3\seman13\SGOALB-Back\obj\Debug\SGOALB-BACK.cspr
 C:\Users\Angie\Desktop\2021-1\tp3\seman13\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\Angie\Desktop\2021-1\tp3\seman13\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb
 C:\Users\Angie\Desktop\2021-1\tp3\seman13\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.modeloproductoproveedorlocal.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CrearProducto.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionProducto.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CreoCategoria.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ProveedorEnOrdenCompra.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoRequerido.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CantidadCatalogoProducto.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoNoRequerido.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.DetalleCompraRelacion.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.modeloproductoproveedorlocal.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CodigoNulo.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Cotizaciondetalle.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionDetalleCompra.resources
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.GenerateResource.cache
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\SGOALB-BACK.dll.config
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\SGOALB-BACK.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\SGOALB-BACK.pdb
@@ -576,6 +589,7 @@ C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\EntityFramework.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\EntityFramework.SqlServer.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\Newtonsoft.Json.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\System.Net.Http.Formatting.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\System.Web.Helpers.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\System.Web.Http.dll
@@ -609,20 +623,6 @@ C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\es\System.Web.Razor.resources.dl
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CrearProducto.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionProducto.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CreoCategoria.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.ProveedorEnOrdenCompra.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoRequerido.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CantidadCatalogoProducto.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.EstadoNoRequerido.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.DetalleCompraRelacion.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.modeloproductoproveedorlocal.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CodigoNulo.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.Cotizaciondetalle.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB_BACK.Migrations.CorrecionDetalleCompra.resources
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.GenerateResource.cache
-C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.csproj.CopyComplete
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.dll
 C:\Users\Usuario\Downloads\TP V\SGOALB-Back\obj\Debug\SGOALB-BACK.pdb

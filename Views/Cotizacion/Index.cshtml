@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.codigo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Proveedor.nombre)
+            @Html.DisplayNameFor(model => model.Usuario.username)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Usuario.username)
+            @Html.DisplayNameFor(model => model.Proveedor.nombre)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.fechaInicio)
@@ -44,12 +44,11 @@
             @Html.DisplayFor(modelItem => item.codigo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Proveedor.nombre)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Usuario.username)
         </td>
-        
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.nombre)
+        </td>  
         <td>
             @Html.DisplayFor(modelItem => item.fechaInicio)
         </td>

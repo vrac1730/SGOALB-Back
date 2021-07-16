@@ -28,17 +28,17 @@ namespace SGOALB_BACK.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             OrdenCompra ordenCompra = db.OrdenCompras.Include(o => o.Usuario.Local).Include(o => o.Proveedor).FirstOrDefault(o => o.id == id);
-            
-            
-            if (ordenCompra == null)
-                return HttpNotFound();
 
-            var detalleCompra = db.DetalleCompras.Include(d => d.Producto).Include(d => d.Producto.Alerta).Where(d => d.idOrdenCompra == id).ToArray();
-            /*for (int i = 0; i < detalleCompra.Length; i++)
+            if (ordenCompra == null)
+                return HttpNotFound();                               
+
+            var detalleCompra = db.DetalleCompras.Include(d => d.Producto.Alerta).Where(d => d.idOrdenCompra == id).ToArray();
+            for (int i = 0; i < detalleCompra.Length; i++)
             {
-                var detalle = db.DetalleCotizaciones.Where(dc => dc.idProducto == detalleCompra[i].idProducto && dc.idAlerta == 9).ToArray();
+                var prod = detalleCompra[i].idProducto;
+                var detalle = db.DetalleCotizaciones.Where(dc => dc.idProducto == prod && dc.idProveedor==ordenCompra.idProveedor && dc.idAlerta == 9);
                 detalleCompra[i].Producto.DetalleCotizacion = detalle.ToList();
-            }     */
+            }     
             ordenCompra.DetalleCompras = detalleCompra.ToList(); 
 
             return View(ordenCompra);
