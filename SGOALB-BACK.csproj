@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202107150654371_CorrecionDetalleCompra.Designer.cs">
       <DependentUpon>202107150654371_CorrecionDetalleCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107170216382_TotalOrdenCompra.cs" />
+    <Compile Include="Migrations\202107170216382_TotalOrdenCompra.Designer.cs">
+      <DependentUpon>202107170216382_TotalOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alerta.cs" />
     <Compile Include="Models\Almacen.cs" />
@@ -338,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107150654371_CorrecionDetalleCompra.resx">
       <DependentUpon>202107150654371_CorrecionDetalleCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107170216382_TotalOrdenCompra.resx">
+      <DependentUpon>202107170216382_TotalOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

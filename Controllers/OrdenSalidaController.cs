@@ -53,7 +53,7 @@ namespace SGOALB_BACK.Controllers
         {
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username");
 
-            var prod = db.Productos.Where(p => p.cantidad <= p.stock_min & p.idAlerta == 4);
+            var prod = db.Productos.Where(p => p.cantidad <= p.stock_min & (p.idAlerta == 4 || p.idAlerta == 8));
 
             ViewData["idProducto"] = new SelectList(prod, "id", "nombre");            
 

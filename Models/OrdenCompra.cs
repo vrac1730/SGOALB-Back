@@ -19,9 +19,13 @@ namespace SGOALB_BACK.Models
         public DateTime fechaOrden { get; set; }
         [DisplayName("Fecha de Pago")]
         public DateTime fechaPago { get; set; }
+        [DisplayName("Estado")]
+        public string estado { get; set; }
         [DisplayName("Monto Total")]
-        public double montoTotal { get; set; }
+        public double? montoTotal { get; set; }
+        [DisplayName("Encargado")]
         public int idUsuario { get; set; }
+        [DisplayName("Proveedor")]
         public int idProveedor { get; set; }
 
         [ForeignKey("idUsuario")]

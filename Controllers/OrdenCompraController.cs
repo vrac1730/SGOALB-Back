@@ -36,23 +36,23 @@ namespace SGOALB_BACK.Controllers
             for (int i = 0; i < detalleCompra.Length; i++)
             {
                 var prod = detalleCompra[i].idProducto;
-                var detalle = db.DetalleCotizaciones.Where(dc => dc.idProducto == prod && dc.idProveedor==ordenCompra.idProveedor && dc.idAlerta == 9);
+                var detalle = db.DetalleCotizaciones.Where(dc => dc.idProducto == prod && dc.idProveedor==ordenCompra.idProveedor && dc.idAlerta == 9).ToArray();
                 detalleCompra[i].Producto.DetalleCotizacion = detalle.ToList();
+                detalleCompra[i].total = detalleCompra[i].cantidad * detalle[0].costo;
             }     
-            ordenCompra.DetalleCompras = detalleCompra.ToList(); 
+            ordenCompra.DetalleCompras = detalleCompra.ToList();
+            double? total = detalleCompra.Sum(m => m.total);
+            ordenCompra.montoTotal = total;
 
             return View(ordenCompra);
         }
 
         // GET: OrdenCompra/Create
-        public ActionResult Create()
+        public ActionResult Create(int?id/*, [Bind(Include = "idProveedor")] OrdenCompra ordenCompra*/)
         {
+            ViewBag.idProducto = new SelectList(db.DetalleCotizaciones.Include(o => o.Producto).Where(o => o.idProveedor == id & o.idAlerta == 9), "idProducto", "Producto.nombre");
             ViewBag.idProveedor = new SelectList(db.Proveedores, "id", "nombre");
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username");
-
-            ViewBag.idProducto = new SelectList(db.Productos, "id", "nombre");
-
-
 
             return View();
         }
@@ -62,23 +62,44 @@ namespace SGOALB_BACK.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,codigo,fechaOrden,fechaPago,montoTotal,idUsuario,idProveedor")] OrdenCompra ordenCompra)
+        public ActionResult Create(int? id, [Bind(Include = "id,codigo,fechaOrden,fechaPago,montoTotal,idUsuario,idProveedor,DetalleCompras")] OrdenCompra ordenCompra)
         {
-            if (ModelState.IsValid)
+            if (ordenCompra.idProveedor != 0) 
             {
-                ordenCompra.fechaOrden = DateTime.Now;
+                if (Url.RequestContext.RouteData.Values.ContainsKey("id") == true) 
+                {
+                    if (ModelState.IsValid)
+                    {
+                        ordenCompra.fechaOrden = DateTime.Now;
+                        ordenCompra.estado = "Pendiente";                        
+                        //ordenCompra.montoTotal = 0;
+                        var os = db.OrdenCompras.OrderByDescending(o => o.id).FirstOrDefault(o => o.estado == "Pendiente");
+                        int idOrden = os.id + 1;
+                        ordenCompra.codigo = "000" + idOrden;
+                        db.OrdenCompras.Add(ordenCompra);
+                        db.SaveChanges();
 
-                ordenCompra.montoTotal = 0;
-                var os = db.OrdenCompras.OrderByDescending(o => o.id).FirstOrDefault(o => o.montoTotal == ordenCompra.montoTotal);
-                int id = os.id + 1;
-                ordenCompra.codigo = "000" + id;
-                //---------------------------------
-                db.OrdenCompras.Add(ordenCompra);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                        foreach (var item in ordenCompra.DetalleCompras)
+                        {
+                            var prod = db.Productos.Find(item.idProducto);
+                            prod.idAlerta = 7;
+                        }
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    ViewBag.idProducto = new SelectList(db.DetalleCotizaciones.Include(o => o.Producto).Where(o => o.idProveedor == id), "idProducto", "Producto.nombre");
+                    ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "username", ordenCompra.idUsuario);
+                    ViewBag.idProveedor = new SelectList(db.Proveedores, "id", "nombre");
+
+                    return View(ordenCompra);
+                }
+                return RedirectToAction("Create", new { id = ordenCompra.idProveedor });
             }
-
+         
+            //ViewBag.idProducto = new SelectList(db.DetalleCotizaciones.Include(o => o.Producto).Where(o => o.idProveedor == id), "idProducto", "Producto.nombre");
             ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenCompra.idUsuario);
+            ViewBag.idProveedor = new SelectList(db.Proveedores, "id", "nombre");            
+            
             return View(ordenCompra);
         }
 

@@ -89,9 +89,9 @@
             context.Productos.AddOrUpdate(x => x.id,
                 new Producto() { id = 1, codigo = "111", nombre = "Cuaderno", descripcion = "Cuaderno de buena calidad", marca = "Loro", stock_min = 10, stock_max = 30, cantidad = 6, idCategoria = 1, idAlerta = 5 },
                 new Producto() { id = 2, codigo = "112", nombre = "Lapiz", descripcion = "Lapiz de buena calidad", marca = "Mongol", stock_min = 10, stock_max = 25, cantidad = 5, idCategoria = 2, idAlerta = 5 },
-                new Producto() { id = 3, codigo = "113", nombre = "Borrador", descripcion = "Borrador de buena calidad", marca = "Faber Castell", stock_min = 10, stock_max = 25, cantidad = 10, idCategoria = 3, idAlerta = 4 },
+                new Producto() { id = 3, codigo = "113", nombre = "Borrador", descripcion = "Borrador de buena calidad", marca = "Faber Castell", stock_min = 10, stock_max = 25, cantidad = 17, idCategoria = 3, idAlerta = 4 },
                 new Producto() { id = 4, codigo = "114", nombre = "Carro", descripcion = "Carro de buena calidad", marca = "Lego", stock_min = 5, stock_max = 15, cantidad = 12, idCategoria = 4, idAlerta = 4 },
-                new Producto() { id = 5, codigo = "115", nombre = "Hoja Bond", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 15, cantidad = 1, idCategoria = 5, idAlerta = 7 },
+                new Producto() { id = 5, codigo = "115", nombre = "Hoja Bond", descripcion = "Hoja Bond de buena calidad", marca = "Atlas", stock_min = 1, stock_max = 15, cantidad = 12, idCategoria = 5, idAlerta = 7 },
                 new Producto() { id = 6, codigo = "116", nombre = "Cuaderno", descripcion = "Cuaderno de buena calidad", marca = "Atlas", stock_min = 10, stock_max = 30, cantidad = 23, idCategoria = 2, idAlerta = 7 }
                 );
 
@@ -111,11 +111,11 @@
                 new OrdenSalida() { id = 5, codigo = "0005", fecha = new DateTime(2021, 06, 03, 12, 19, 20), estado = "Pendiente", idUsuario = 5 }
                 );
             context.OrdenCompras.AddOrUpdate(x => x.id,
-                new OrdenCompra() { id = 1, codigo = "0001", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1500, idUsuario = 1, idProveedor = 3 },
-                new OrdenCompra() { id = 2, codigo = "0002", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 500, idUsuario = 2, idProveedor = 2 },
-                new OrdenCompra() { id = 3, codigo = "0003", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1200, idUsuario = 3, idProveedor = 1 },
-                new OrdenCompra() { id = 4, codigo = "0004", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 1000, idUsuario = 4, idProveedor = 4 },
-                new OrdenCompra() { id = 5, codigo = "0005", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), montoTotal = 000, idUsuario = 5, idProveedor = 5 }
+                new OrdenCompra() { id = 1, codigo = "0001", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), estado= "Pendiente", montoTotal = 1500, idUsuario = 1, idProveedor = 3 },
+                new OrdenCompra() { id = 2, codigo = "0002", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), estado = "Pendiente", montoTotal = 500, idUsuario = 2, idProveedor = 2 },
+                new OrdenCompra() { id = 3, codigo = "0003", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), estado = "Pendiente", montoTotal = 1200, idUsuario = 3, idProveedor = 1 },
+                new OrdenCompra() { id = 4, codigo = "0004", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), estado = "Pendiente", montoTotal = 1000, idUsuario = 4, idProveedor = 4 },
+                new OrdenCompra() { id = 5, codigo = "0005", fechaOrden = new DateTime(2021, 06, 03, 12, 19, 20), fechaPago = new DateTime(2021, 06, 03, 15, 19, 20), estado = "Pendiente", montoTotal = 000, idUsuario = 5, idProveedor = 5 }
                 );
             context.Cotizaciones.AddOrUpdate(x => x.id,
                 new Cotizacion() { id = 1, codigo = "0001", fechaInicio = new DateTime(2021, 06, 03, 12, 19, 20), fechaFin = new DateTime(2021, 06, 08, 12, 19, 20), estado = "Pendiente", iva = 0.11, total = 200.00, idUsuario = 2, idProveedor = 3 },
