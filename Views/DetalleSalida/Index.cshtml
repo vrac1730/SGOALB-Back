@@ -4,18 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Reporte Salida</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Agregar", "Create")*@
 </p>
+@using (Html.BeginForm("Index", "DetalleSalida", FormMethod.Post))
+{
+    <div>
+        <h5>Código de Orden</h5>
+        @Html.TextBox("cod", "", new { @class = "form-control" })
+        <h5>Nombre de Producto</h5>
+        @Html.TextBox("cadena", "", new { @class = "form-control" })
+
+        <button type="submit" class="btn-default">Buscar</button>
+    </div>
+}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.OrdenSalida.codigo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Producto.codigo)
+            @Html.DisplayNameFor(model => model.Producto.nombre)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.cantSolicitada)
@@ -24,34 +35,41 @@
             @Html.DisplayNameFor(model => model.cantEntregada)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.observacion)
+            @Html.DisplayNameFor(model => model.Producto.Alerta.nombre)
+        </th>
+        <th>
+            Fecha
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenSalida.codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producto.codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cantSolicitada)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cantEntregada)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.observacion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenSalida.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantSolicitada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantEntregada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Alerta.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenSalida.fecha)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.id })*@
+            </td>
+        </tr>
+    }
 
 </table>
