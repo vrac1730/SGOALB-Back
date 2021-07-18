@@ -137,6 +137,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CotizacionController.cs" />
+    <Compile Include="Controllers\DetalleCompraController.cs" />
+    <Compile Include="Controllers\DetalleSalidaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\OrdenCompraController.cs" />
@@ -289,6 +291,8 @@
     <Content Include="Views\Cotizacion\Index.cshtml" />
     <Content Include="Views\Cotizacion\Create.cshtml" />
     <Content Include="Views\Cotizacion\Details.cshtml" />
+    <Content Include="Views\DetalleSalida\Index.cshtml" />
+    <Content Include="Views\DetalleCompra\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
