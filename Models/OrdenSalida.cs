@@ -15,7 +15,7 @@ namespace SGOALB_BACK.Models
         public int id { get; set; }
         [DisplayName("Código de Solicitud")]
         public string codigo { get; set; }
-        [Column(TypeName = "datetime2"), DisplayName("Fecha")]
+        [Column(TypeName = "datetime2"), DisplayName("Fecha"), DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime fecha { get; set; }        
         [DisplayName("Estado")]
         public string estado { get; set; }

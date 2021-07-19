@@ -97,7 +97,7 @@ namespace SGOALB_BACK.Controllers
             }
          
             //ViewBag.idProducto = new SelectList(db.DetalleCotizaciones.Include(o => o.Producto).Where(o => o.idProveedor == id), "idProducto", "Producto.nombre");
-            ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenCompra.idUsuario);
+            //ViewBag.idUsuario = new SelectList(db.Usuarios, "id", "nombre", ordenCompra.idUsuario);
             ViewBag.idProveedor = new SelectList(db.Proveedores, "id", "nombre");            
             
             return View(ordenCompra);

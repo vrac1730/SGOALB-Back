@@ -17,9 +17,7 @@
     @if (Url.RequestContext.RouteData.Values.ContainsKey("id") == false)
     {
         <div class="form-group">
-
             @Html.LabelFor(model => model.Proveedor.nombre, "Proveedor", htmlAttributes: new { @class = "control-label col-md-2" })
-
             <div class="col-md-3">
                 @Html.DropDownList("idProveedor", null, "Seleccione Proveedor", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.idProveedor, "", new { @class = "text-danger" })

@@ -21,8 +21,8 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
-            //context.Database.Delete();
-            //context.Database.CreateIfNotExists();
+            context.Database.Delete();
+            context.Database.CreateIfNotExists();
 
             
             context.Personas.AddOrUpdate(x => x.id,
@@ -97,12 +97,12 @@
 
 
             context.ProductosxAlmacen.AddOrUpdate(x => x.id,
-              new ProductoxAlmacen() { id = 1, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 15, idAlmacen = 1, idProducto = 1, idEstado = 1, idAlerta = 2 },
-              new ProductoxAlmacen() { id = 2, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 8, idAlmacen = 1, idProducto = 2, idEstado = 2, idAlerta = 1 },
+              new ProductoxAlmacen() { id = 1, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 40, idAlmacen = 1, idProducto = 1, idEstado = 1, idAlerta = 2 },
+              new ProductoxAlmacen() { id = 2, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 45, idAlmacen = 1, idProducto = 2, idEstado = 2, idAlerta = 1 },
               new ProductoxAlmacen() { id = 3, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 6, idAlmacen = 1, idProducto = 3, idEstado = 2, idAlerta = 1 },
               new ProductoxAlmacen() { id = 4, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 13, idAlmacen = 1, idProducto = 4, idEstado = 3, idAlerta = 3 },
-              new ProductoxAlmacen() { id = 5, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 15, idAlmacen = 1, idProducto = 5, idEstado = 3, idAlerta = 3 },
-              new ProductoxAlmacen() { id = 6, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 30, idAlmacen = 1, idProducto = 6, idEstado = 3, idAlerta = 3 }
+              new ProductoxAlmacen() { id = 5, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 10, idAlmacen = 1, idProducto = 5, idEstado = 3, idAlerta = 3 },
+              new ProductoxAlmacen() { id = 6, fecha_ingreso = new DateTime(2021, 06, 03, 12, 19, 20), fecha_salida = new DateTime(2021, 06, 03, 15, 19, 20), cantidad = 7, idAlmacen = 1, idProducto = 6, idEstado = 3, idAlerta = 3 }
               );
             context.OrdenSalidas.AddOrUpdate(x => x.id,
                 new OrdenSalida() { id = 1, codigo = "0001", fecha = new DateTime(2021, 06, 03, 12, 19, 20), estado = "Pendiente", idUsuario = 1 },
