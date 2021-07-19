@@ -22,9 +22,9 @@
             //  to avoid creating duplicate seed data.
 
             //context.Database.Delete();
-            //context.Database.CreateIfNotExists();            
+            //context.Database.CreateIfNotExists();
 
-
+            
             context.Personas.AddOrUpdate(x => x.id,
                new Persona() { id = 1, dni = 12345678, nombre = "Jose", aPaterno = "Zapata", aMaterno = "Tuñoque", celular = 123456789 },
                new Persona() { id = 2, dni = 70360207, nombre = "Victor", aPaterno = "Alarcón", aMaterno = "Campos", celular = 963109798 },
