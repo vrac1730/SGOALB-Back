@@ -40,7 +40,7 @@ namespace SGOALB_BACK.Models
 
         [Required]
         [DisplayName("Razón social")]
-        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "* Solo se permiten letras.")]
+        [RegularExpression("^[a-zA-Z]+( [a-zA-Z]+)*$", ErrorMessage = "* Solo se permiten letras.")]
         public string razon_social { get; set; }
 
         public List<DetalleCotizacion> DetalleCotizacion { get; set; }

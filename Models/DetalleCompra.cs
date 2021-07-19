@@ -15,7 +15,7 @@ namespace SGOALB_BACK.Models
         public int id { get; set; }
         [DisplayName("Cantidad")]
         public int cantidad { get; set; }
-        [DisplayName("Recibido")]
+        [DisplayName("Recibido"), RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten  positivos.")]
         public int cantidadRecibida { get; set; }
         public double total { get; set; }
         public int idOrdenCompra { get; set; }
